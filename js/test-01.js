@@ -121,3 +121,25 @@ console.log(formatMessage("Vestibulum facilisis purus nec", 20));
 console.log(formatMessage("Vestibulum facilisis purus nec", 30));
 console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15));
 console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41));
+
+//===============================
+
+function checkForSpam(message) {
+  let result;
+  // Change code below this line
+      if (message.includes("spam") || message.includes("sale")) {
+        result = true;
+      } else {
+        result = false;
+      }
+  // Change code above this line
+  return result;
+}
+
+console.log(checkForSpam("Get best sale offers now!"));
+console.log(checkForSpam("Latest technology news"));
+console.log(checkForSpam("JavaScript weekly newsletter"));
+console.log(checkForSpam("Amazing SalE, only tonight!"));
+console.log(checkForSpam("Trust me, this is not a spam message"));
+console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!"));
+console.log(checkForSpam("[SPAM] How to earn fast money?"));    

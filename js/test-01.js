@@ -126,13 +126,14 @@ console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41));
 
 function checkForSpam(message) {
   let result;
-  // Change code below this line
-      if (message.includes("spam") || message.includes("sale")) {
+  
+      if (message.includes("spam") || message.includes("SPAM")) {
+        result = true;
+      } else  if (message.includes("sale") || message.includes("SalE")){
         result = true;
       } else {
         result = false;
-      }
-  // Change code above this line
+      } 
   return result;
 }
 

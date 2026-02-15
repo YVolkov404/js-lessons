@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function checkAge(age) {
   if (age >= 18) {
     return "You are an adult";
@@ -42,31 +41,14 @@ console.log(lastElement);
 //===============================
 
 function getExtremeElements(array) {
-    array.splice(1, console.log(array.length-2));
-    return array;
-=======
-function calculateEngravingPrice(message, pricePerWord) {
-    return message.split(" ").length-1 * pricePerWord;
-}
-
-console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
-console.log(calculateEngravingPrice("JavaScript is in my blood", 20));
-console.log(calculateEngravingPrice("Web-development is creative work", 40));
-console.log(calculateEngravingPrice("Web-development is creative work", 20));
-
-//========================================
-
-function getExtremeElements(array) {
     array.splice(1, array.length - 2);
     return array;   
->>>>>>> 6e8f439a87a9f01d71671f3d2006be3666fd9ef6
 }
 
 console.log(getExtremeElements([1, 2, 3, 4, 5]));
 console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
 console.log(getExtremeElements(["apple", "peach", "pear", "banana"]));
 
-<<<<<<< HEAD
 //==============================
 
 function splitMessage(message, delimiter) {
@@ -102,8 +84,6 @@ console.log(makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ")
 console.log(makeStringFromArray(["M", "a", "n", "g", "o"], ""));
 console.log(makeStringFromArray(["top", "picks", "for", "you"], "_"));
 
-//==============================
-=======
 //========================================
 
 function includes(array, value) {
@@ -127,7 +107,6 @@ console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
 console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));
 
 //========================================
->>>>>>> 6e8f439a87a9f01d71671f3d2006be3666fd9ef6
 
 function slugify(title) {
     const slug = title.toLowerCase().split(' ').join('-');
@@ -249,17 +228,17 @@ console.log(createArrayOfNumbers(29, 34));
 
 //==============================
 
-function filterArray(numbers, value) {
-    let newArray = [];
-    for(let el of numbers) {
-      if (el > value) {
-          newArray.push(el);
+    function filterArray(numbers, value) {
+        let newArray = [];
+        for (let el of numbers) {
+            if (el > value) {
+                newArray.push(el);
+            }
         }
-    }
-    return newArray;
+        return newArray;
 }
+
 
 console.log(filterArray([1, 2, 3, 4, 5], 3));
 console.log(filterArray([1, 2, 3, 4, 5], 4));
 console.log(filterArray([1, 2, 3, 4, 5], 5));
-

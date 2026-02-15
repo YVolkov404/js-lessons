@@ -41,8 +41,7 @@ console.log(lastElement);
 //===============================
 
 function getExtremeElements(array) {
-    array.splice(1, array.length - 2);
-    return array;   
+    return array.splice(1, array.length - 2); 
 }
 
 console.log(getExtremeElements([1, 2, 3, 4, 5]));
@@ -242,3 +241,95 @@ console.log(createArrayOfNumbers(29, 34));
 console.log(filterArray([1, 2, 3, 4, 5], 3));
 console.log(filterArray([1, 2, 3, 4, 5], 4));
 console.log(filterArray([1, 2, 3, 4, 5], 5));
+
+//==============================
+
+function checkFruit(fruit) {
+  const fruits = ['apple', 'plum', 'pear', 'orange'];
+    if (fruits.includes(fruit)) {
+        return true;
+    }
+    return false;
+}
+
+console.log(checkFruit("plum"));
+console.log(checkFruit("mango"));
+console.log(checkFruit("apple"));
+
+//==============================
+
+function getCommonElements(array1, array2) {
+    let newArr = [];
+    for (let el of array1) {
+        if (array2.includes(el)) {
+            newArr.push(el)
+        }
+    }
+    return newArr
+}
+
+console.log(getCommonElements([1, 2, 3], [2, 4]));
+console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
+console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+
+//==============================
+
+// function filterArray(numbers, value) {
+
+//   const filteredNumbers = [];
+
+//   for (const item of numbers) {
+//         if (item > value) {
+//             filteredNumbers.push(item);
+//         }
+//     }
+
+//   return filteredNumbers;
+
+// }
+
+console.log(filterArray([1, 2, 3, 4, 5], 4));
+console.log(filterArray([12, 24, 8, 41, 76], 38));
+console.log( filterArray([12, 24, 8, 41, 76], 20));
+
+//==============================
+
+function getEvenNumbers(start, end) {
+    let newArray = [];
+
+    for (let i = start; i <= end; i += 1) {
+        if (i % 2 === 0) {
+            newArray.push(i);
+        }
+    }
+
+    return newArray;
+  }
+
+
+console.log(getEvenNumbers(3, 11));
+console.log(getEvenNumbers(6, 12));
+console.log(getEvenNumbers(2, 5));
+
+//===============================
+
+// function includes(array, value) {
+//   let message;
+//   for (const el of array) {
+//     if (el === value) {
+//         message = true; 
+//         break;
+//     } else {
+//         message = false;
+//     }  
+//   }
+//   return message 
+// }
+
+// console.log(includes([1, 2, 3, 4, 5], 3));
+// console.log(includes([1, 2, 3, 4, 5], 17));
+// console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter"));
+// console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"));
+// console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
+// console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));

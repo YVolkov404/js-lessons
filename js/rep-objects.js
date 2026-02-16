@@ -206,3 +206,44 @@ const getFriendsByOnlineStatus = function (friends) {
 };
 
 console.log(getFriendsByOnlineStatus(friends));
+
+// ? exanmple
+const cart = {
+  items: [],
+  getItems() {return this.items},
+  add(product) {
+    product.quantity = 1;
+  },
+  remove(productName) {},
+  clear() {},
+  countTotalPrice() {},
+  increaseQuantity(productName) {},
+  decreaseQuantiti(productName) {},
+};
+
+console.log(cart);
+
+console.table(cart.getItems());
+
+cart.add({ name: "Mango", price: 50 });
+cart.add({ name: "Kiwi", price: 30 });
+cart.add({ name: "Apple", price: 20 });
+cart.add({ name: "Strawberry", price: 60 });
+cart.add({ name: "Peach", price: 40 });
+
+console.table(cart.getItems());
+
+cart.remove();
+console.table(cart.getItems());
+
+cart.clear();
+console.table(cart.getItems());
+
+cart.increaseQuantity("Apple");
+console.table(cart.getItems());
+
+cart.decreaseQuantiti("Kiwi");
+cart.decreaseQuantiti("Peach");
+console.table(cart.getItems());
+
+console.log(cart.countTotalPrice());

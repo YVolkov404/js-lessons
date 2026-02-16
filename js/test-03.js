@@ -112,5 +112,27 @@ result = add(56, 23);
 
 console.log(result);
 
+// ? Example 09
 
+const fnA = function (a, b, c) { 
+   const result = fnB(34, 21, 1);
+   return Math.round(result / a + b * c);
+}
 
+const fnB = function (a, b, c) {
+   return a - b + c
+}
+
+console.log(fnA(5, 65, 43));
+console.log(fnB(43, 34, 12));
+
+// ? Example 10
+
+const cart = [23, 45, 65, 223, 23, 11, 83, 245, 135, 90];
+let t0tal = 0;
+
+for (const value of cart) {
+    t0tal += value;
+}
+
+console.log(`t0tal: ${t0tal}`);

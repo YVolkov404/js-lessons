@@ -1,6 +1,3 @@
-
-//===============================
-
 function checkPassword(password) {
   const ADMIN_PASSWORD = "jqueryismyjam";
 
@@ -269,23 +266,23 @@ console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
 
 //==============================
 
-// function filterArray(numbers, value) {
+function filteredArray(numbers, value) {
 
-//   const filteredNumbers = [];
+  const filteredNumbers = [];
 
-//   for (const item of numbers) {
-//         if (item > value) {
-//             filteredNumbers.push(item);
-//         }
-//     }
+  for (const item of numbers) {
+        if (item > value) {
+            filteredNumbers.push(item);
+        }
+    }
 
-//   return filteredNumbers;
+  return filteredNumbers;
 
-// }
+}
 
-// console.log(filterArray([1, 2, 3, 4, 5], 4));
-// console.log(filterArray([12, 24, 8, 41, 76], 38));
-// console.log( filterArray([12, 24, 8, 41, 76], 20));
+console.log(filteredArray([1, 2, 3, 4, 5], 4));
+console.log(filteredArray([12, 24, 8, 41, 76], 38));
+console.log( filteredArray([12, 24, 8, 41, 76], 20));
 
 //==============================
 
@@ -308,22 +305,22 @@ console.log(getEvenNumbers(2, 5));
 
 //===============================
 
-// function includes(array, value) {
-//   let message;
-//   for (const el of array) {
-//     if (el === value) {
-//         message = true; 
-//         break;
-//     } else {
-//         message = false;
-//     }  
-//   }
-//   return message 
-// }
+let message;
+function include(array, value) {
+for (const el of array) {
+    if (el === value) {
+        message = true; 
+        break;
+    } else {
+        message = false;
+    }  
+  }
+  return message 
+}
 
-// console.log(includes([1, 2, 3, 4, 5], 3));
-// console.log(includes([1, 2, 3, 4, 5], 17));
-// console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter"));
-// console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"));
-// console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
-// console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));
+console.log(include([1, 2, 3, 4, 5], 17));
+console.log(include([1, 2, 3, 4, 5], 3));
+console.log(include(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter"));
+console.log(include(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"));
+console.log(include(["apple", "plum", "pear", "orange"], "plum"));
+console.log(include(["apple", "plum", "pear", "orange"], "kiwi"));

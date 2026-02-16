@@ -1,12 +1,9 @@
-<<<<<<< test-03
+// let number = 0;
+// const value = prompt("Enter a number:", number)
 
-=======
-// let num = 0;
-// const val = prompt("Enter a number:", num)
+// const message = 15 > value ? `15 is greater than ${value}` : `15 is not greater than ${value}`;
 
-// const mess = 15 > value ? `15 is greater than ${value}` : `15 is not greater than ${value}`;
-
-// console.log(mess);
+// console.log(message);
 
 //===============================
 
@@ -235,21 +232,21 @@ checkAge(38);
 
 //------------------------------
 
-// function checkStorage(available, ordered) {
-//   let message;
-//         if(ordered > available) {
-//             message = "Not enough goods in stock!"
-//         } else {
-//             message = "Order is processed, our manager will contact you."
-//         }
-//   return message;
-// }
+function checkThisStorage(available, ordered) {
+  let message;
+        if(ordered > available) {
+            message = "Not enough goods in stock!"
+        } else {
+            message = "Order is processed, our manager will contact you."
+        }
+  return message;
+}
 
-// checkStorage(100, 50);
-// checkStorage(100, 130);
-// checkStorage(200, 20);
-// checkStorage(200, 150);
-// checkStorage(150, 180);
+checkThisStorage(100, 50);
+checkThisStorage(100, 130);
+checkThisStorage(200, 20);
+checkThisStorage(200, 150);
+checkThisStorage(150, 180);
 
 //------------------------------
 
@@ -310,7 +307,7 @@ checkPassword("jqueryismyjam");
 
 //------------------------------    
 
-function checkStorage(available, ordered) {
+function checkingStorage(available, ordered) {
   let message;
 
     if (ordered === 0) {
@@ -323,12 +320,12 @@ function checkStorage(available, ordered) {
   return message;
 }
 
-checkStorage(100, 50);
-checkStorage(100, 130);
-checkStorage(70, 0);
-checkStorage(200, 20);
-checkStorage(200, 250);
-checkStorage(150, 0);
+checkingStorage(100, 50);
+checkingStorage(100, 130);
+checkingStorage(70, 0);
+checkingStorage(200, 20);
+checkingStorage(200, 250);
+checkingStorage(150, 0);
 
 //------------------------------
 
@@ -402,35 +399,35 @@ getDiscount(20000);
 
 //------------------------------
 
-// function checkStorage(available, ordered) {
-//   let message;
+function checkStorage(available, ordered) {
+  let message;
 
-//     message = ordered > available ? "Not enough goods in stock!" : "The order is accepted, our manager will contact you";
+    message = ordered > available ? "Not enough goods in stock!" : "The order is accepted, our manager will contact you";
 
-//     return message;
-// }
+    return message;
+}
 
-// checkStorage(100, 50);
-// checkStorage(100, 130);
-// checkStorage(70, 0);
-// checkStorage(200, 20);
-// checkStorage(200, 250);
-// checkStorage(150, 0);
+checkStorage(100, 50);
+checkStorage(100, 130);
+checkStorage(70, 0);
+checkStorage(200, 20);
+checkStorage(200, 250);
+checkStorage(150, 0);
 
 //------------------------------
 
-// function checkPassword(password) {
-//   const ADMIN_PASSWORD = "jqueryismyjam";
-//   let message;
+function checkingPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
 
-//       message = password === ADMIN_PASSWORD ? "Access is allowed" : "Access denied, wrong password!";
+      message = password === ADMIN_PASSWORD ? "Access is allowed" : "Access denied, wrong password!";
 
-//   return message;
-// }
+  return message;
+}
 
-// checkPassword("jqueryismyjam");
-// checkPassword("angul4r1sl1f3");
-// checkPassword("r3actsux");
+checkingPassword("jqueryismyjam");
+checkingPassword("angul4r1sl1f3");
+checkingPassword("r3actsux");
 
 //------------------------------
 
@@ -460,27 +457,26 @@ getSubscriptionPrice("starter");
 
 //------------------------------
 
-// function checkPassword(password) {
-//   const ADMIN_PASSWORD = "jqueryismyjam";
-//   let message;
+function checkedPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
 
-//     switch (password) {
-//       case null:
-//         message = "Canceled by user!";
-//         break;
-//       case ADMIN_PASSWORD: 
-//         message = "Welcome!";
-//         break;
-//       default: 
-//         message = "Access denied, wrong password!" 
-//     }
+    switch (password) {
+      case null:
+        message = "Canceled by user!";
+        break;
+      case ADMIN_PASSWORD: 
+        message = "Welcome!";
+        break;
+      default: 
+        message = "Access denied, wrong password!" 
+    }
 
-//   return message;
-// }
+  return message;
+}
 
-// checkPassword(null);
-// checkPassword("mangohackzor");
-// console.log(checkPassword("polyhax"));
-// console.log(checkPassword("jqueryismyjam"));
-// checkPassword("mangohackzor");
->>>>>>> main
+checkedPassword(null);
+checkedPassword("mangohackzor");
+console.log(checkedPassword("polyhax"));
+console.log(checkedPassword("jqueryismyjam"));
+checkedPassword("mangohackzor");

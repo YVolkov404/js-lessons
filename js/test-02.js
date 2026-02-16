@@ -30,13 +30,13 @@ function checkStorage(available, ordered) {
 
 //===============================
 
-const fruits = ['apple', 'peach', 'pear', 'banana'];
+// const fruits = ['apple', 'peach', 'pear', 'banana'];
 
-const lastElementIndex = fruits.length - 1;
+// const lastElementIndex = fruits.length - 1;
 
-const lastElement = fruits[lastElementIndex];
+// const lastElement = fruits[lastElementIndex];
 
-console.log(lastElement);
+// console.log(lastElement);
 
 //===============================
 
@@ -170,12 +170,12 @@ console.log(calculateTotal(171));
 
 //===============================
 
-// const fruits = ['apple', 'plum', 'pear', 'orange'];
+const fruits = ['apple', 'plum', 'pear', 'orange'];
 
-// for (let i = 0; i < fruits.length; i += 1) {
-//     const fruit = fruits[i];
-//     console.log(fruit);
-// }
+for (let i = 0; i < fruits.length; i += 1) {
+    const fruit = fruits[i];
+    console.log(fruit);
+}
 
 //===============================
 
@@ -275,19 +275,19 @@ console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
 
 //==============================
 
-// function filterArray(numbers, value) {
+function filterArray(numbers, value) {
 
-//   const filteredNumbers = [];
+  const filteredNumbers = [];
 
-//   for (const item of numbers) {
-//         if (item > value) {
-//             filteredNumbers.push(item);
-//         }
-//     }
+  for (const item of numbers) {
+        if (item > value) {
+            filteredNumbers.push(item);
+        }
+    }
 
-//   return filteredNumbers;
+  return filteredNumbers;
 
-// }
+}
 
 console.log(filterArray([1, 2, 3, 4, 5], 4));
 console.log(filterArray([12, 24, 8, 41, 76], 38));
@@ -314,22 +314,22 @@ console.log(getEvenNumbers(2, 5));
 
 //===============================
 
-// function includes(array, value) {
-//   let message;
-//   for (const el of array) {
-//     if (el === value) {
-//         message = true; 
-//         break;
-//     } else {
-//         message = false;
-//     }  
-//   }
-//   return message 
-// }
+function includes(array, value) {
+  let message;
+  for (const el of array) {
+    if (el === value) {
+        message = true; 
+        break;
+    } else {
+        message = false;
+    }  
+  }
+  return message 
+}
 
-// console.log(includes([1, 2, 3, 4, 5], 3));
-// console.log(includes([1, 2, 3, 4, 5], 17));
-// console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter"));
-// console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"));
-// console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
-// console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));
+console.log(includes([1, 2, 3, 4, 5], 3));
+console.log(includes([1, 2, 3, 4, 5], 17));
+console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter"));
+console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"));
+console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
+console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));

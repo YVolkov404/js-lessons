@@ -8,7 +8,21 @@ message = logins.includes(loginToFind)
     ? `Login ${loginToFind} found`
     : `Login ${loginToFind} not found`
 
-console.log(message);   
+console.log(message);
+
+// ? OR
+
+const findLogin = function (logins, loginToFind) {
+    return logins.includes(loginToFind) 
+        ? `Login ${loginToFind} found`
+        : `Login ${loginToFind} not found`
+}
+
+console.log(findLogin(logins, "sadccew212cvwecv"));
+console.log(findLogin(logins, "isdoiejkrlnvsd"));
+console.log(findLogin(logins, "slcxvionjernfmsddl"));
+console.log(findLogin(logins, "wqwccc32rfge"));
+
 
 // ? Example 02
 
@@ -136,3 +150,24 @@ for (const value of cart) {
 }
 
 console.log(`t0tal: ${t0tal}`);
+
+// ? OR
+
+const calculateTotalPrice = function (cart) {
+    let t0tal = 0;
+
+    for (const value of cart) {
+        t0tal += value;
+    }
+
+    return t0tal;
+}
+
+const totalPrice = calculateTotalPrice([23, 45, 65, 223, 23, 11, 83, 245, 135, 90]);
+
+console.log(totalPrice);
+
+
+// ? Example 11
+
+

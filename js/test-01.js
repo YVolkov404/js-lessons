@@ -1,9 +1,12 @@
-let num;
-const val = prompt("Enter a number:", number)
+<<<<<<< test-03
 
-const mess = 15 > value ? `15 is greater than ${value}` : `15 is not greater than ${value}`;
+=======
+// let num = 0;
+// const val = prompt("Enter a number:", num)
 
-console.log(mess);
+// const mess = 15 > value ? `15 is greater than ${value}` : `15 is not greater than ${value}`;
+
+// console.log(mess);
 
 //===============================
 
@@ -232,21 +235,21 @@ checkAge(38);
 
 //------------------------------
 
-function checkStorage(available, ordered) {
-  let message;
-        if(ordered > available) {
-            message = "Not enough goods in stock!"
-        } else {
-            message = "Order is processed, our manager will contact you."
-        }
-  return message;
-}
+// function checkStorage(available, ordered) {
+//   let message;
+//         if(ordered > available) {
+//             message = "Not enough goods in stock!"
+//         } else {
+//             message = "Order is processed, our manager will contact you."
+//         }
+//   return message;
+// }
 
-checkStorage(100, 50);
-checkStorage(100, 130);
-checkStorage(200, 20);
-checkStorage(200, 150);
-checkStorage(150, 180);
+// checkStorage(100, 50);
+// checkStorage(100, 130);
+// checkStorage(200, 20);
+// checkStorage(200, 150);
+// checkStorage(150, 180);
 
 //------------------------------
 
@@ -399,35 +402,35 @@ getDiscount(20000);
 
 //------------------------------
 
-function checkStorage(available, ordered) {
-  let message;
+// function checkStorage(available, ordered) {
+//   let message;
 
-    message = ordered > available ? "Not enough goods in stock!" : "The order is accepted, our manager will contact you";
+//     message = ordered > available ? "Not enough goods in stock!" : "The order is accepted, our manager will contact you";
 
-    return message;
-}
+//     return message;
+// }
 
-checkStorage(100, 50);
-checkStorage(100, 130);
-checkStorage(70, 0);
-checkStorage(200, 20);
-checkStorage(200, 250);
-checkStorage(150, 0);
+// checkStorage(100, 50);
+// checkStorage(100, 130);
+// checkStorage(70, 0);
+// checkStorage(200, 20);
+// checkStorage(200, 250);
+// checkStorage(150, 0);
 
 //------------------------------
 
-function checkPassword(password) {
-  const ADMIN_PASSWORD = "jqueryismyjam";
-  let message;
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
 
-      message = password === ADMIN_PASSWORD ? "Access is allowed" : "Access denied, wrong password!";
+//       message = password === ADMIN_PASSWORD ? "Access is allowed" : "Access denied, wrong password!";
 
-  return message;
-}
+//   return message;
+// }
 
-checkPassword("jqueryismyjam");
-checkPassword("angul4r1sl1f3");
-checkPassword("r3actsux");
+// checkPassword("jqueryismyjam");
+// checkPassword("angul4r1sl1f3");
+// checkPassword("r3actsux");
 
 //------------------------------
 
@@ -457,26 +460,27 @@ getSubscriptionPrice("starter");
 
 //------------------------------
 
-function checkPassword(password) {
-  const ADMIN_PASSWORD = "jqueryismyjam";
-  let message;
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
 
-    switch (password) {
-      case null:
-        message = "Canceled by user!";
-        break;
-      case ADMIN_PASSWORD: 
-        message = "Welcome!";
-        break;
-      default: 
-        message = "Access denied, wrong password!" 
-    }
+//     switch (password) {
+//       case null:
+//         message = "Canceled by user!";
+//         break;
+//       case ADMIN_PASSWORD: 
+//         message = "Welcome!";
+//         break;
+//       default: 
+//         message = "Access denied, wrong password!" 
+//     }
 
-  return message;
-}
+//   return message;
+// }
 
-checkPassword(null);
-checkPassword("mangohackzor");
-console.log(checkPassword("polyhax"));
-console.log(checkPassword("jqueryismyjam"));
-checkPassword("mangohackzor");
+// checkPassword(null);
+// checkPassword("mangohackzor");
+// console.log(checkPassword("polyhax"));
+// console.log(checkPassword("jqueryismyjam"));
+// checkPassword("mangohackzor");
+>>>>>>> main

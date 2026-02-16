@@ -6,7 +6,6 @@ const playlist = {
   name,
   rating: 5,
   tracks: ["track01", "track02", "track03"],
-  trackCount: 3,
   [propKey]: {},
 };
 
@@ -19,6 +18,25 @@ console.log(playlist[prop]);
 // ? usecase
 console.log(playlist.tracks[1]);
 console.log(playlist);
+
+// ? usecase :: using destructrurig
+const {
+  author = 'user',
+  rating,
+  tracks,
+  trackCount: numberOfTracks =0,
+  [propKey]: {},
+} = playlist;
+
+console.log(playlist);
+
+// console.log(trackCount);
+console.log(numberOfTracks);
+
+tracks.push('tarck04');
+console.log(tracks);
+
+console.log(rating);
 
 // ? example
 const inputKey = "color";
@@ -210,7 +228,9 @@ console.log(getFriendsByOnlineStatus(friends));
 // ? exanmple
 const cart = {
   items: [],
-  getItems() {return this.items},
+  getItems() {
+    return this.items;
+  },
   add(product) {
     product.quantity = 1;
   },
@@ -247,3 +267,69 @@ cart.decreaseQuantiti("Peach");
 console.table(cart.getItems());
 
 console.log(cart.countTotalPrice());
+
+// ? example :: using SPREAD
+// const arr = [1, 2, 3]
+
+// const numbers = [0, 9, ...arr, 4, 5];
+// console.log(numbers);
+
+console.log(..."Hello World");
+
+//? example
+const temps = [23, 32, 45, 35, 21, 19, 67];
+
+console.log(Math.max(...temps));
+console.log(Math.min(...temps));
+
+//? example
+const arr1 = [1, 34, 23, 5];
+const arr2 = [3, 45, 22];
+const arr3 = [78, 0];
+
+const arr = [...arr2, ...arr1, ...arr3];
+
+console.log(arr);
+
+// ? example :: using Object.assing() and SPREAD
+const a = { x: 1, y: 2 };
+const b = { x: 3, z: 4 };
+const g = {};
+
+const c = Object.assign(g, a, b);
+
+console.log(c);
+
+const d = { ...a, name: "Mango", ...b };
+
+console.log(d);
+
+//? example :: using destructuring array
+const rgb = [232, 123, 97];
+
+const [red, blue, green] = rgb;
+
+console.log(red, blue, green);
+
+// ? example
+const authors = {
+  kiwi: 5,
+  polly: 9,
+  mango: 3,
+  ajax: 1
+}
+// ? usecase
+const ratings = Object.values(authors);
+
+console.log(ratings);
+
+console.log(Math.min(...ratings));
+
+// ? usecase
+const entries = Object.entries(authors);
+
+for (const [name, rating] of entries) {
+
+  console.log(name, rating);
+}
+

@@ -1,3 +1,6 @@
+<<<<<<< test-03
+
+=======
 // let num = 0;
 // const val = prompt("Enter a number:", num)
 
@@ -480,3 +483,4 @@ getSubscriptionPrice("starter");
 // console.log(checkPassword("polyhax"));
 // console.log(checkPassword("jqueryismyjam"));
 // checkPassword("mangohackzor");
+>>>>>>> main

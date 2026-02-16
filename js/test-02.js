@@ -1,10 +1,6 @@
-function checkAge(age) {
-  if (age >= 18) {
-    return "You are an adult";
-  }
-  return "You are a minor";
-}
 
+<<<<<<< test-03
+=======
 //===============================
 
 function checkPassword(password) {
@@ -333,3 +329,4 @@ console.log(getEvenNumbers(2, 5));
 // console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"));
 // console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
 // console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));
+>>>>>>> main

@@ -170,4 +170,35 @@ console.log(totalPrice);
 
 // ? Example 11
 
+const fn = function () {
+    console.log(arguments); // псевдомассив без методов массива
+    const array = Array.from(arguments); // преобразование псевдомассива в массив
+    console.log(array); // массив с методами
+}
 
+fn(1, 2, 3, 4, 5, 6);
+
+// ? OR
+
+const foo = function (a, b, ...args) {
+    console.log(a);
+    console.log(b);
+    console.log(args); // массив с методами
+}
+
+foo(1, 2, 3, 4, 5, 6);
+
+// ? Example 12
+
+const filteredNumbers = function (array, ...args) {
+    const uniqueEl = []
+    for (const el of array) {
+        if (args.includes(el)) {
+           uniqueEl.push(el);      
+        }
+    }
+    return uniqueEl;
+}
+
+console.log(filteredNumbers([15, 2, 34, 4, 5], 10, 15, 34));
+console.log(filteredNumbers([11, 32, 63, 44, 55], 11, 25, 32, 74));

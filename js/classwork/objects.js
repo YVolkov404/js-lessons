@@ -333,3 +333,4 @@ for (const [name, rating] of entries) {
   console.log(name, rating);
 }
 
+console.log("hello world");

@@ -120,3 +120,52 @@ console.log(averageRating);
 
 console.log("-------------- example -------------------");
 
+const temps = [22, 43, 14, 56, 34, 78, 61, 21];
+
+// ❌ Так не спрацює, тому що передаємо цілий масив
+console.log(Math.max(temps)); // NaN
+
+// В консолі буде набір окремих чисел
+console.log(...temps);
+// ✅ Розподілимо колекцію елементів у якості окремих аргументів
+console.log(Math.min(...temps));
+
+console.log("-------------- example -------------------");
+
+const spread1 = [...temps];
+
+console.log(spread1);
+
+console.log("-------------- example -------------------");
+
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [6, 7, 8, 9, 10];
+
+const spread2 = [...arr1, ...arr2];
+const spread3 = [...arr2, ...arr1];
+
+console.log(spread2);
+console.log(spread3);
+
+console.log("-------------- example -------------------");
+
+// function multiply(...args) {
+//   console.log(args); // масив усіх аргументів
+// }
+
+// multiply(1, 2);
+// multiply(1, 2, 3);
+// multiply(1, 2, 3, 4);
+
+console.log("-------------- example -------------------");
+
+function multiply(firstNumber, secondNumber, ...otherArgs) {
+  console.log(firstNumber); // Значення першого аргументу
+  console.log(secondNumber); // Значення другого аргументу
+  console.log(otherArgs); // Масив інших аргументів
+}
+
+multiply(1, 2);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4);
+

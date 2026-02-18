@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>autochecks</title>
+    <title>classwork-old</title>
 </head>
 <body>
     <a href="../../default/">main page</a>
-    <script type="module" src="../../js/autochecks/check-01.js"> </script>
+    <script type="module" src="../../js/classwork-old/objects-01.js"> </script>
 </body>
 </html>

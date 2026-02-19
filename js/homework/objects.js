@@ -149,25 +149,25 @@ console.log(spread3);
 
 console.log("-------------- example -------------------");
 
-// function multiply(...args) {
-//   console.log(args); // масив усіх аргументів
-// }
-
-// multiply(1, 2);
-// multiply(1, 2, 3);
-// multiply(1, 2, 3, 4);
-
-console.log("-------------- example -------------------");
-
-function multiply(firstNumber, secondNumber, ...otherArgs) {
-  console.log(firstNumber); // Значення першого аргументу
-  console.log(secondNumber); // Значення другого аргументу
-  console.log(otherArgs); // Масив інших аргументів
+function multiply(...args) {
+  console.log(args); // масив усіх аргументів
 }
 
 multiply(1, 2);
 multiply(1, 2, 3);
 multiply(1, 2, 3, 4);
+
+console.log("-------------- example -------------------");
+
+// function multiply(firstNumber, secondNumber, ...otherArgs) {
+//   console.log(firstNumber); // Значення першого аргументу
+//   console.log(secondNumber); // Значення другого аргументу
+//   console.log(otherArgs); // Масив інших аргументів
+// }
+
+// multiply(1, 2);
+// multiply(1, 2, 3);
+// multiply(1, 2, 3, 4);
 
 console.log("-------------- example -------------------");
 
@@ -239,15 +239,23 @@ console.log(`Red: ${red}, Colors ${colors}`);
 
 console.log("-------------- example -------------------");
 
-function doStuffWithBook(title, author) {
-  console.log(title, author);
+const myBooks = {
+  books: ["The Last Kingdom"],
+  author: "Bernard Cornwell",
+  genres: ["hidtorical prose", "adventure"],
+  isPublic: true,
+  rating: 8.38,
+};
+
+function doStuffWithBook(books, author, rating) {
+    console.log(books, author, rating);
 }
 
 // ? OR
 
-function doStuffWithBook(book) {
-  console.log(book.books, book.author);
-}
+// function doStuffWithBook(myBooks) {
+//   console.log(myBooks.books, myBooks.author);
+// }
 
 // ? OR  деструктурізація в сигнатурі (підписі) функції
 
@@ -260,7 +268,8 @@ doStuffWithBook({
 })
 
 // ? OR
-function doStuffWithBook(books) {
-  const { author, genres, isPublic, rating } = books;
-  console.log(author, genres, isPublic, rating);
-}
+
+// function doStuffWithBook(myBooks) {
+//   const { author, genres, isPublic, rating } = myBooks;
+//   console.log(author, genres, isPublic, rating);
+// }

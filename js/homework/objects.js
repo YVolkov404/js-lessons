@@ -169,3 +169,26 @@ multiply(1, 2);
 multiply(1, 2, 3);
 multiply(1, 2, 3, 4);
 
+console.log("-------------- example -------------------");
+
+const book = {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    genres: ['hidtorical prose', 'adventure'],
+    isPublic: true,
+    rating: 8.38,
+}
+
+const {
+    author,
+    title,
+    genres,
+    isPublic,
+    rating,
+} = book;
+
+console.log(title, author, genres, isPublic, rating);
+
+const accessType = isPublic ? 'публічному' : 'закритому';
+const message = `Книга ${title} автора ${author} з рейтингом ${rating} знаходиться ${accessType} в доступі`;
+console.log(message);

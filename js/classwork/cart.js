@@ -4,7 +4,21 @@ const cart = {
     return this.items;
   },
     add(product) {
-    this.items.push(product);
+    const { items } = this;
+
+    for (const item of items) {
+      if (item.name === product.name) {
+        item.quantity += 1;
+        return;
+      }
+    }
+
+    const newProduct = {
+      ...product,
+      quantity: 1,
+    }
+    
+    this.items.push(newProduct);
   },
   remove(productName) {
     const { items } = this;
@@ -25,8 +39,8 @@ const cart = {
   countTotalPrice() {
     const { items } = this;
     let total = 0;
-    for (const { price } of items) {
-      total += price;
+    for (const { price, quantity } of items) {
+      total += price * quantity;
     }
     return total;
   },
@@ -40,7 +54,10 @@ console.log(cart.getItems());
 
 cart.add({ name: "Mango", price: 50 });
 cart.add({ name: "Kiwi", price: 30 });
+cart.add({ name: "Kiwi", price: 30 });
 cart.add({ name: "Apple", price: 20 });
+cart.add({ name: "Strawberry", price: 60 });
+cart.add({ name: "Strawberry", price: 60 });
 cart.add({ name: "Strawberry", price: 60 });
 cart.add({ name: "Peach", price: 40 });
 

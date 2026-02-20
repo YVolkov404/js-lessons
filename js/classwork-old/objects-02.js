@@ -358,7 +358,6 @@ cart.add({ name: "🍌", price: 65 });
 cart.add({ name: "🍌", price: 65 });
 
 console.table(cart.getItems());
-gi
 cart.remove("🥔");
 
 console.table(cart.getItems());

@@ -1,3 +1,5 @@
+console.log("--------------------------------------------------");
+
 // ? example
 const name = "Playlist";
 const propKey = "location";
@@ -8,6 +10,8 @@ const playlist = {
   tracks: ["track01", "track02", "track03"],
   [propKey]: {},
 };
+
+console.log("--------------------------------------------------");
 
 // ? usecase
 playlist[propKey] = ["ukraine", "usa", "sweden"];
@@ -21,10 +25,10 @@ console.log(playlist);
 
 // ? usecase :: using destructrurig
 const {
-  author = 'user',
+  author = "user",
   rating,
   tracks,
-  trackCount: numberOfTracks =0,
+  trackCount: numberOfTracks = 0,
   [propKey]: {},
 } = playlist;
 
@@ -33,10 +37,12 @@ console.log(playlist);
 // console.log(trackCount);
 console.log(numberOfTracks);
 
-tracks.push('tarck04');
+tracks.push("tarck04");
 console.log(tracks);
 
 console.log(rating);
+
+console.log("--------------------------------------------------");
 
 // ? example
 const inputKey = "color";
@@ -51,6 +57,8 @@ colorPickedData.data = [1, 2, 3];
 console.log(colorPickedData.data[2]);
 console.log(colorPickedData);
 
+console.log("--------------------------------------------------");
+
 // ? example
 // function is the Object
 const foo = function () {
@@ -61,6 +69,8 @@ foo.hello = "greetings";
 
 console.dir(foo);
 console.dir(foo.hello);
+
+console.log("--------------------------------------------------");
 
 // ? example :: methods of the Object
 const myPlaylist = {
@@ -98,6 +108,8 @@ myPlaylist.addTracks("track05");
 console.log(myPlaylist.getTrackCount());
 
 console.log(myPlaylist);
+
+console.log("--------------------------------------------------");
 
 // ? example
 let totalFeedBack = 0;
@@ -144,6 +156,8 @@ for (const [key, value] of Object.entries(object)) {
   console.log(`${key}: ${value}`);
 }
 
+console.log("--------------------------------------------------");
+
 // ? example
 const friends = [
   { name: "Mango", isOnline: false },
@@ -161,6 +175,8 @@ for (const friend of friends) {
   console.log((friend.newProp = "prop"));
 }
 
+console.log("--------------------------------------------------");
+
 // ? example
 const findFriendByName = function (friends, name) {
   for (const friend of friends) {
@@ -177,6 +193,8 @@ const findFriendByName = function (friends, name) {
 console.log(findFriendByName(friends, "Polly"));
 console.log(findFriendByName(friends, "Foma"));
 
+console.log("--------------------------------------------------");
+
 // ? example
 const getAllFriendsNames = function (friends) {
   let arrOfNames = [];
@@ -189,6 +207,8 @@ const getAllFriendsNames = function (friends) {
 
 console.log(getAllFriendsNames(friends));
 console.log(getAllFriendsNames(friends));
+
+console.log("--------------------------------------------------");
 
 // ? example
 const getOnlineFriends = function (friends) {
@@ -204,6 +224,8 @@ const getOnlineFriends = function (friends) {
 
 console.log(getOnlineFriends(friends));
 console.log(getOnlineFriends(friends));
+
+console.log("--------------------------------------------------");
 
 // ? example
 const getFriendsByOnlineStatus = function (friends) {
@@ -225,48 +247,7 @@ const getFriendsByOnlineStatus = function (friends) {
 
 console.log(getFriendsByOnlineStatus(friends));
 
-// ? exanmple
-const cart = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    product.quantity = 1;
-  },
-  remove(productName) {},
-  clear() {},
-  countTotalPrice() {},
-  increaseQuantity(productName) {},
-  decreaseQuantiti(productName) {},
-};
-
-console.log(cart);
-
-console.table(cart.getItems());
-
-cart.add({ name: "Mango", price: 50 });
-cart.add({ name: "Kiwi", price: 30 });
-cart.add({ name: "Apple", price: 20 });
-cart.add({ name: "Strawberry", price: 60 });
-cart.add({ name: "Peach", price: 40 });
-
-console.table(cart.getItems());
-
-cart.remove();
-console.table(cart.getItems());
-
-cart.clear();
-console.table(cart.getItems());
-
-cart.increaseQuantity("Apple");
-console.table(cart.getItems());
-
-cart.decreaseQuantiti("Kiwi");
-cart.decreaseQuantiti("Peach");
-console.table(cart.getItems());
-
-console.log(cart.countTotalPrice());
+console.log("--------------------------------------------------");
 
 // ? example :: using SPREAD
 // const arr = [1, 2, 3]
@@ -276,11 +257,15 @@ console.log(cart.countTotalPrice());
 
 console.log(..."Hello World");
 
+console.log("--------------------------------------------------");
+
 //? example
 const temps = [23, 32, 45, 35, 21, 19, 67];
 
 console.log(Math.max(...temps));
 console.log(Math.min(...temps));
+
+console.log("--------------------------------------------------");
 
 //? example
 const arr1 = [1, 34, 23, 5];
@@ -290,6 +275,8 @@ const arr3 = [78, 0];
 const arr = [...arr2, ...arr1, ...arr3];
 
 console.log(arr);
+
+console.log("--------------------------------------------------");
 
 // ? example :: using Object.assing() and SPREAD
 const a = { x: 1, y: 2 };
@@ -304,6 +291,8 @@ const d = { ...a, name: "Mango", ...b };
 
 console.log(d);
 
+console.log("--------------------------------------------------");
+
 //? example :: using destructuring array
 const rgb = [232, 123, 97];
 
@@ -311,13 +300,15 @@ const [red, blue, green] = rgb;
 
 console.log(red, blue, green);
 
+console.log("--------------------------------------------------");
+
 // ? example
 const authors = {
   kiwi: 5,
   polly: 9,
   mango: 3,
-  ajax: 1
-}
+  ajax: 1,
+};
 // ? usecase
 const ratings = Object.values(authors);
 
@@ -329,8 +320,62 @@ console.log(Math.min(...ratings));
 const entries = Object.entries(authors);
 
 for (const [name, rating] of entries) {
-
   console.log(name, rating);
 }
 
-console.log("hello world");
+console.log("--------------------------------------------------");
+
+// const profile = {
+//   title: "Jacques Gluke",
+//   tag: "jgluke",
+//   location: "Ukraine",
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+// const { title, tag, ...restProps } = profile;
+
+// console.log(profile);
+
+// console.log(title, tag);
+// console.log(restProps);
+
+console.log("--------------------------------------------------");
+
+function showProfileInfo({
+  title,
+  tag,
+  location,
+  stats: { followers, views, likes },
+}) {
+  console.log(title, tag, location, followers, views, likes);
+}
+
+// ? usecase
+
+// function showProfileInfo(userProfile) {
+//   const {
+//   title,
+//   tag,
+//   location,
+//   stats: { followers, views, likes },
+// } = userProfile;
+
+//   console.log(title, tag, location, followers, views, likes);
+// }
+
+// const profile = {
+//   title: "Jacques Gluke",
+//   tag: "jgluke",
+//   location: "Ukraine",
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+// showProfileInfo(profile);

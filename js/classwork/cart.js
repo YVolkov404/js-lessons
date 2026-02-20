@@ -9,13 +9,16 @@ const cart = {
   remove(productName) {
     const { items } = this;
 
-    for (let i = 0; i < this.items.length; i += 1) {
-      const name = items[i];
+    for (let i = 0; i < items.length; i += 1) {
+     const {name} = items[i];  
+
       if (productName === name) {
+        console.log(i);
         items.splice(i, 1);
       }
     }
   },
+
   clear() {
     this.items = [];
   },
@@ -33,7 +36,7 @@ const cart = {
 
 console.log(cart);
 
-console.table(cart.getItems());
+console.log(cart.getItems());
 
 cart.add({ name: "Mango", price: 50 });
 cart.add({ name: "Kiwi", price: 30 });
@@ -43,17 +46,18 @@ cart.add({ name: "Peach", price: 40 });
 
 console.table(cart.getItems());
 
-cart.remove();
-console.table(cart.getItems("Peach"));
-
-cart.clear();
-console.table(cart.getItems());
-
-cart.increaseQuantity("Apple");
-console.table(cart.getItems());
-
-cart.decreaseQuantiti("Kiwi");
-cart.decreaseQuantiti("Peach");
+cart.remove("Apple");
 console.table(cart.getItems());
 
 console.log(cart.countTotalPrice());
+
+cart.clear();
+console.log(cart.getItems());
+
+// cart.increaseQuantity("Apple");
+// console.table(cart.getItems());
+
+// cart.decreaseQuantiti("Kiwi");
+// cart.decreaseQuantiti("Peach");
+// console.table(cart.getItems());
+

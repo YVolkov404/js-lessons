@@ -173,27 +173,81 @@ console.log(credentials);
 
 console.log("============== Example 10 ==============");
 
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const keys = [];
+// const values = [];
+// // Change code below this line
+
+// for (const key in apartment) {
+//   keys.push(key);
+//   values.push(apartment[key]);
+// }
+
+// console.log(keys);
+// console.log(values);
+
+console.log("============== Example 11 ==============");
+
+// const keys = [];
+// const values = [];
+// const advert = {
+//   service: "apt",
+// };
+// const apartment = Object.create(advert);
+// apartment.descr = "Spacious apartment in the city center";
+// apartment.rating = 4;
+// apartment.price = 2153;
+
+// for (const key in apartment) {
+//   if (apartment.hasOwnProperty(key)) {
+//     keys.push(key);
+//     values.push(apartment[key]);
+//   }
+// }
+
+// console.log(advert);
+// console.log(apartment);
+
+console.log("============== Example 12 ==============");
+
+function countProps(object) {
+  let propCount = 0;
+  
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      propCount += object.key = 1
+    };
+  }
+
+  return propCount;
+}
+
+console.log(countProps({}));
+console.log(countProps({ name: "Mango", age: 2 }));
+console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }));
+
+console.log("============== Example 13 ==============");
+
 const apartment = {
   descr: "Spacious apartment in the city center",
   rating: 4,
   price: 2153,
 };
-const keys = [];
-const values = [];
-// Change code below this line
 
-for (const key in apartment) {
-  keys.push(key);
-  values.push(apartment[key]);
+const values = [];
+
+const keys = Object.keys(apartment);
+
+for (const item of keys) {
+  values.push(apartment[item])
 }
 
-console.log(keys);
 console.log(values);
 
-
-console.log("============== Example 11 ==============");
-console.log("============== Example 12 ==============");
-console.log("============== Example 13 ==============");
 console.log("============== Example 14 ==============");
 console.log("============== Example 15 ==============");
 console.log("============== Example 16 ==============");

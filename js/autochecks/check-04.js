@@ -594,13 +594,13 @@ function makeTask(data) {
   const category = "General";
   const priority = "Normal";
 
-    const newData = {
-      completed,
-      category,
-      priority,
-      ...data,
-    };
-    return newData;
+  const newData = {
+    completed,
+    category,
+    priority,
+    ...data,
+  };
+  return newData;
 }
 
 console.log(
@@ -651,12 +651,101 @@ console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
 console.log(addOverNum(15, 32, 6, 13, 19, 8));
 console.log(addOverNum(20, 74, 11, 62, 46, 12, 36));
 
-// console.log("============== Example 33 ==============");
-// console.log("============== Example 34 ==============");
-// console.log("============== Example 35 ==============");
-// console.log("============== Example 36 ==============");
-// console.log("============== Example 37 ==============");
-// console.log("============== Example 38 ==============");
+console.log("============== Example 33 ==============");
+
+function findMatches(array, ...args) {
+  const matches = [];
+
+  for (const item of args) {
+    if (array.includes(item)) {
+      matches.push(item);
+    }
+  }
+
+  return matches;
+}
+
+console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
+console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
+
+console.log("============== Example 34 ==============");
+
+// const bookShelf = {
+//   books: ["The last kingdom", "The guardian of dreams"],
+//   getBooks() {
+//     return "Returning all books";
+//   },
+//   addBook(bookName) {
+//     this.books.push(bookName)
+//     return `Adding book ${bookName}`;
+//   },
+//   removeBook(bookName) {
+//     const bookIndex = this.books.indexOf(bookName);
+//     this.books.splice(bookIndex, 1);
+//     return `Deleting book ${bookNmae}`;
+//   },
+//   updateBook(oldName, newName) {
+//     return `Updating book ${oldName} to ${newName}`;
+//   }
+// };
+
+// console.log(bookShelf.getBooks());
+// console.log(bookShelf.addBook("Haze", "Red sunset"));
+// console.log(bookShelf.books);
+// console.log(bookShelf.removeBook("The last kingdom"));
+// console.log(bookShelf.books);
+// console.log(bookShelf.updateBook("Sands of dune", "Dune"));
+
+console.log("============== Example 35 ==============");
+
+const bookShelf = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+    const bookIndex = this.books.indexOf(oldName);
+    this.books.splice(bookIndex, 1, newName);
+
+    console.table(bookShelf);
+  },
+};
+
+console.log(bookShelf.updateBook("Haze", "Dungeon chronicles"));
+console.log(bookShelf.updateBook("The last kingdom", "Dune"));
+
+console.log("============== Example 36 ==============");
+
+// const atTheOldToad = {
+//   potions: [],
+// };
+
+// console.table(atTheOldToad);
+
+console.log("============== Example 37 ==============");
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   getPotions() {
+//     return this.potions;
+//   }
+// };
+
+// console.log(atTheOldToad.getPotions());
+
+console.log("============== Example 38 ==============");
+
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  addPotion(potionName) {
+    this.potions.push(potionName);
+  },
+};
+
+
+console.log(atTheOldToad.addPotion("Invisibility"));
+console.log(atTheOldToad.addPotion("Power potion"));
+
+console.table(atTheOldToad);
+
 // console.log("============== Example 39 ==============");
 // console.log("============== Example 40 ==============");
 // console.log("============== Example 41 ==============");

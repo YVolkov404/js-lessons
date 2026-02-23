@@ -76,12 +76,128 @@ console.log("============== Example ==============");
 
 console.log("============== Example ==============");
 
-const onGetPositionSuccess = function(position) {
-    console.log(position);
+// const onGetPositionSuccess = function(position) {
+//     console.log(position);
+// }
+
+// const onGetPositionError = function(error) {
+//     console.log(error);
+// }
+
+// window.navigator.geolocation.getCurrentPosition(onGetPositionSuccess, onGetPositionError)
+
+console.log("============== Example ==============");
+
+// const callback = function () {
+//     console.log('callback after 3 seconds a timeout occurs' );
+// }
+
+// console.log('in the code before timeout');
+
+// setTimeout(callback, 3000);
+
+// console.log('in the code after timeout');
+
+console.log("============== Example ==============");
+
+// const onRequestSuccess = function(response) {
+//     console.log(response);
+// }
+
+// fetch('https://pokeapi.co/api/v2/pokemon')
+//     .then(res => res.json())
+//     .then(onRequestSuccess); 
+
+console.log("============== Example ==============");
+
+const filter = function (array, callback) {
+    const filteredArray = [];
+
+    for (const el of array) {
+        const passed = callback(el)
+
+        if (passed) {
+            filteredArray.push(el)
+        }
+    }
+
+    return filteredArray;
 }
 
-const onGetPositionError = function(error) {
-    console.log(error);
+// ? usecase
+const callback_01 = function (value) {
+    return value >= 3;
+}
+console.log(filter([1, 2, 3, 4, 5], callback_01));
+
+const callback_02 = function (value) {
+    return value <= 3;
+}
+console.log(filter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], callback_02));
+
+// ? usecase
+const fruits = [
+    {name: 'apple', quantity: 200, isFresh: true},
+    {name: 'kiwi', quantity: 100, isFresh: false},
+    {name: 'peach', quantity: 400, isFresh: true}
+]
+
+const getFruitsWithQuantity = function (fruit) {
+    return fruit.quantity >= 180;
 }
 
-window.navigator.geolocation.getCurrentPosition(onGetPositionSuccess, onGetPositionError)
+console.table(filter(fruits, getFruitsWithQuantity));
+
+console.log("============== Example ==============");
+
+const fnA = function (parameter) {
+
+    const innerVariable = 'Inner Variable';
+    
+    const innerFunction = function () {
+        console.log(parameter);
+        console.log(innerVariable);
+        console.log('Function');
+    }
+
+    return innerFunction;
+}
+
+const fnB = fnA(555)
+
+fnB()
+
+console.log(fnB);
+
+console.log("============== Example ==============");
+
+// const coockDish = function (cheefName, dish) {
+//     console.log(`${cheefName} coocking ${dish}`);
+// }
+
+// coockDish('mango', 'omlet');
+// coockDish('mango', 'soup');
+// coockDish('mango', 'kebab');
+
+// coockDish('polly', 'tea');
+// coockDish('polly', 'coffee');
+// coockDish('polly', 'cake');
+
+const makeCheef = function (cheefName) {
+    const coockDish = function (dish) {
+    console.log(`${cheefName} coocking ${dish}`);
+    }
+    return coockDish;
+}
+
+const mango = makeCheef('mango');
+
+mango('soup');
+mango('omlet');
+
+const polly = makeCheef('polly');
+
+polly('tea');
+polly('cake');
+
+

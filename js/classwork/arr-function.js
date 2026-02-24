@@ -297,7 +297,18 @@ console.log("============== Example ==============");
 
 const addNumbers = (a, b, c) => a + b + c;
 
-
 console.log(addNumbers(34, 21, 6)); 
 
+console.log("============== Example ==============");
 
+const fnC = function () {
+    return {
+        a: 5
+    }
+}
+
+console.log(fnC());
+
+const arrow = () => ({a: 5})
+
+console.log(arrow);

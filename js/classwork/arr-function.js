@@ -192,12 +192,112 @@ const makeCheef = function (cheefName) {
 
 const mango = makeCheef('mango');
 
+console.dir(mango);
+
 mango('soup');
 mango('omlet');
 
 const polly = makeCheef('polly');
 
+console.dir(polly);
+
 polly('tea');
 polly('cake');
+
+console.log("============== Example ==============");
+
+const floatingPoint = 3.456789;
+
+const someInt = Math.round(floatingPoint);
+const withDecimals = Number(floatingPoint.toFixed(2));
+
+console.log(someInt);
+console.log(withDecimals);
+
+// const rounder = function (number, places) {
+//     return Number(number.toFixed(places))
+// }
+
+// console.log(rounder(4.435436, 4));
+
+// ? OR
+
+const rounder = function rounder (places) {
+    return function (number) {
+        return Number(number.toFixed(places))
+    }
+}
+
+const rounder2 = rounder(2);
+const rounder3 = rounder(3);
+
+console.log(rounder2(floatingPoint));
+console.log(rounder3(4.123456));
+
+console.log("============== Example ==============");
+
+const salaryManagerFactory = function (employeeName, baseSalary) {
+    let salary = baseSalary;
+
+    const changeBy = function (amount) {
+        salary += amount;
+    }
+
+    return {
+        raise(amount) {
+            changeBy(amount);
+        },
+        lower(amount) {
+            changeBy(amount);
+        },
+        current() {
+            return `current salary - ${salary}`
+        }
+    }
+}
+
+const salaryManager = salaryManagerFactory('mango', 5000)
+
+// console.dir(salaryManager.raise);
+
+console.log(salaryManager.current())
+
+
+console.log("============== Example ==============");
+
+const myLibFactory = function() {
+    let value = 0;
+
+    const add = function (number) {
+        value += number;
+    }
+
+    return {
+        add: add,
+        getValue() {
+            return value;
+        }
+    }
+}
+
+const myLib = myLibFactory();
+
+// console.log(myLib);
+console.log(myLib.getValue());
+myLib.add(10);
+console.log(myLib.getValue());
+
+console.log("============== Example ==============");
+
+// const addNumbers = function (a, b, c) {
+//     return a + b + c;
+// }
+
+// ? OR arrow function
+
+const addNumbers = (a, b, c) => a + b + c;
+
+
+console.log(addNumbers(34, 21, 6)); 
 
 

@@ -12,6 +12,8 @@ numbers.forEach(function (number, index, array) {
 
 console.log(numbers);
 
+console.log("============== Example ==============");
+
 // ? map
 
 const doubledNumbers = numbers.map(number => {
@@ -27,8 +29,12 @@ const students = [
   { name: "kiwi", score: 94 },
 ];
 
-const studentsName = students.map(name => {
-    return name.name;
-})
+// const studentsName = students.map(name => {
+//     return name.score;
+// })
+
+//? OR
+
+const studentsName = students.map(name => name.score);
 
 console.log(studentsName);

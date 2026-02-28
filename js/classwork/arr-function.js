@@ -312,3 +312,5 @@ console.log(fnC());
 const arrow = () => ({a: 5})
 
 console.log(arrow);
+
+console.log("============== Example ==============");

@@ -75,14 +75,39 @@ console.log("============== Example ==============");
 
 console.table(players);
 
-const playerIDToUpdate = "player-3";
+const playerIDToUpdate = "player-4";
+
+// const updatedPlayersById = players.map((player) => {
+//   console.log(player.id);
+//   if (playerIDToUpdate === player.id) {
+//     console.log('playerIDToUpdate :>> ', playerIDToUpdate);
+//     return playerIDToUpdate;
+//   }  
+// });
+
+// const updatedPlayersById = players.map((player) => {
+//   if (playerIDToUpdate === player.id) {
+//     console.log('playerIDToUpdate :>> ', playerIDToUpdate);
+//     return "оновлений об'єкт";
+//   }
+//   return "старий об'єкт";    
+// });
+
+// console.table(updatedPlayersById);
 
 const updatedPlayersById = players.map((player) => {
-  console.log(player.id);
   if (playerIDToUpdate === player.id) {
-    console.log('playerIDToUpdate :>> ', playerIDToUpdate);
-    return playerIDToUpdate;
+    return {
+      ...player,
+      timePlayed: player.timePlayed + 100,
+      online: player.online = true,
+    };
   }
+  return player;    
 });
+
+console.table(updatedPlayersById);
+
+
 
 

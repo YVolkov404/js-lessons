@@ -82,7 +82,7 @@ const playerIDToUpdate = "player-4";
 //   if (playerIDToUpdate === player.id) {
 //     console.log('playerIDToUpdate :>> ', playerIDToUpdate);
 //     return playerIDToUpdate;
-//   }  
+//   }
 // });
 
 // const updatedPlayersById = players.map((player) => {
@@ -90,24 +90,103 @@ const playerIDToUpdate = "player-4";
 //     console.log('playerIDToUpdate :>> ', playerIDToUpdate);
 //     return "оновлений об'єкт";
 //   }
-//   return "старий об'єкт";    
+//   return "старий об'єкт";
 // });
 
 // console.table(updatedPlayersById);
 
+// const updatedPlayersById = players.map((player) => {
+//   if (playerIDToUpdate === player.id) {
+//     return {
+//       ...player,
+//       timePlayed: player.timePlayed + 100,
+//       online: player.online = true,
+//     };
+//   }
+//   return player;
+// });
+
+// ? OR
+
 const updatedPlayersById = players.map((player) => {
-  if (playerIDToUpdate === player.id) {
-    return {
-      ...player,
-      timePlayed: player.timePlayed + 100,
-      online: player.online = true,
-    };
-  }
-  return player;    
+  return playerIDToUpdate === player.id
+    ? {
+        ...player,
+        timePlayed: player.timePlayed + 100,
+        online: (player.online = true),
+      }
+    : player;
 });
 
 console.table(updatedPlayersById);
 
+console.log("============== Example ==============");
 
+// ? filter
 
+console.table(players);
 
+const filteredNumbers = numbers.filter((number) => {
+  // console.log('number :>> ', number);
+
+  return number > 5;
+});
+
+console.log(filteredNumbers);
+
+console.log("============== Example ==============");
+
+const onlinePlayers = players.filter((player) => player.online);
+console.log(onlinePlayers);
+
+const offlinePlayers = players.filter((player) => !player.online);
+console.log(offlinePlayers);
+
+console.log("============== Example ==============");
+
+const hardcorePlayers = players.filter((player) => player.timePlayed > 250);
+console.log(hardcorePlayers);
+
+console.log("============== Example ==============");
+
+// ? find
+
+console.table(players);
+
+const number = numbers.find((number) => number >= 5);
+console.log("number :>> ", number);
+
+const playerIdToFind = "player-2";
+
+const playerWithId = players.find((player) => player.id === playerIdToFind);
+console.log("playerWithId :>> ", playerWithId);
+
+const playerNameToFind = "polly";
+
+const playerWithName = players.find((player) => player.name === "polly");
+console.log("playerWithName :>> ", playerWithName);
+
+console.log("============== Example ==============");
+
+// ? every
+
+console.table(players);
+
+const isAllOnline = players.every((player) => player.online);
+console.log('isAllOnline :>> ', isAllOnline);
+
+console.log("============== Example ==============");
+
+// ? some
+
+console.table(players);
+
+const isAnyOnline = players.some(player => player.online);
+console.log('isAnyOnline :>> ', isAnyOnline);
+
+const anyHardcorePlayers = players.some(player => player.timePlayed > 400);
+console.log('anyHardcorePlayers :>> ', anyHardcorePlayers);
+
+console.log("============== Example ==============");
+
+// ? reduce

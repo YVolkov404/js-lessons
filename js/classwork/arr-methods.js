@@ -173,7 +173,7 @@ console.log("============== Example ==============");
 console.table(players);
 
 const isAllOnline = players.every((player) => player.online);
-console.log('isAllOnline :>> ', isAllOnline);
+console.log("isAllOnline :>> ", isAllOnline);
 
 console.log("============== Example ==============");
 
@@ -181,12 +181,51 @@ console.log("============== Example ==============");
 
 console.table(players);
 
-const isAnyOnline = players.some(player => player.online);
-console.log('isAnyOnline :>> ', isAnyOnline);
+const isAnyOnline = players.some((player) => player.online);
+console.log("isAnyOnline :>> ", isAnyOnline);
 
-const anyHardcorePlayers = players.some(player => player.timePlayed > 400);
-console.log('anyHardcorePlayers :>> ', anyHardcorePlayers);
+const anyHardcorePlayers = players.some((player) => player.timePlayed > 400);
+console.log("anyHardcorePlayers :>> ", anyHardcorePlayers);
 
 console.log("============== Example ==============");
 
 // ? reduce
+
+const total = numbers.reduce((acc, number) => {
+  console.log("number :>> ", number);
+  console.log("acc :>> ", acc);
+  return acc + number;
+}, 0);
+
+// ? accumulator = 0 => 1 => return 0 + 1
+// ? accumulator = 1 => 2 => return 1 + 2
+// ? accumulator = 3 => 3 => return 3 + 3
+// ? accumulator = 6 => 4 => return 6 + 4
+// ? accumulator = 10 => 20 => return 10 + 20
+// ? accumulator = 30 => 6 => return 30 + 6
+// ? accumulator = 36 => 7 => return 36 + 7
+// ? accumulator = 43 => 8 => return 43 + 8
+// ? accumulator = 51 => 9 => return 51 + 9
+// ? accumulator = 60 => 10 => return 60 + 10
+
+console.log(total);
+
+const salary = {
+  mango: 100,
+  polly: 50,
+  ajax: 150,
+};
+
+console.log("============== Example ==============");
+
+const totalSalary = Object.values(salary).reduce(
+  (total, value) => total + value,
+);
+
+console.log(totalSalary);
+
+console.log("============== Example ==============");
+
+console.table(players);
+
+

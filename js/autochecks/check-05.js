@@ -519,7 +519,6 @@ const myBooks = [
 
 const MIN_RATING = 8;
 const AUTHOR = "Bernard Cornwell";
-// Change code below this line
 
 const topRatedBooks = myBooks.filter((book) => book.rating >= MIN_RATING);
 const booksByAuthor = myBooks.filter((book) => book.author === AUTHOR);
@@ -563,17 +562,109 @@ console.log(getUsersWithFriend(users, "Briana Decker"));
 console.log(getUsersWithFriend(users, "Goldie Gentry"));
 console.log(getUsersWithFriend(users, "Adrian Cross"));
 
-// console.log("============== Example 25 ==============");
-// console.log("============== Example 26 ==============");
-// console.log("============== Example 27 ==============");
-// console.log("============== Example 28 ==============");
-// console.log("============== Example 29 ==============");
-// console.log("============== Example 30 ==============");
-// console.log("============== Example 31 ==============");
-// console.log("============== Example 32 ==============");
-// console.log("============== Example 33 ==============");
-// console.log("============== Example 34 ==============");
-// console.log("============== Example 35 ==============");
+console.log("============== Example 25 ==============");
+
+const getFriends = (users) =>
+  users
+    .flatMap((user) => user.friends)
+    .filter((friend, index, friends) => friends.indexOf(friend) === index);
+
+console.log(getFriends(users));
+
+console.log("============== Example 26 ==============");
+
+const getActiveUsers = (users) => users.filter((user) => user.isActive);
+
+console.log(getActiveUsers(users));
+
+console.log("============== Example 27 ==============");
+
+const getInactiveUsers = (users) => users.filter((user) => !user.isActive);
+
+console.log(getActiveUsers(users));
+
+console.log("============== Example 28 ==============");
+
+console.log(myBooks);
+
+const BOOK_TITLE = "The Dream of a Ridiculous Man";
+const BOOK_AUTHOR = "Robert Sheckley";
+
+const bookWithTitle = myBooks.find((book) => book.title === BOOK_TITLE);
+const bookByAuthor = myBooks.find((book) => book.author === BOOK_AUTHOR);
+
+console.log(bookWithTitle);
+console.log(bookByAuthor);
+
+console.log("============== Example 29 ==============");
+
+const getUserWithEmail = (users, email) =>
+  users.find((user) => user.email === email);
+
+console.log(getUserWithEmail(users, "shereeanthony@kog.com"));
+console.log(getUserWithEmail(users, "elmahead@omatom.com"));
+console.log(getUserWithEmail(users, "blackburndotson@furnigeer.com"));
+
+console.log("============== Example 30 ==============");
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+
+// const eachElementInFirstIsEven = firstArray.every((value) => value % 2 === 0);
+// const eachElementInFirstIsOdd = firstArray.every((value) => value % 2 !== 0);
+
+// console.log(eachElementInFirstIsEven);
+// console.log(eachElementInFirstIsOdd);
+
+// const eachElementInSecondIsEven = secondArray.every((value) => value % 2 === 0);
+// const eachElementInSecondIsOdd = secondArray.every((value) => value % 2 !== 0);
+
+// console.log(eachElementInSecondIsEven);
+// console.log(eachElementInSecondIsOdd);
+
+// const eachElementInThirdIsEven = thirdArray.every((value) => value % 2 === 0);
+// const eachElementInThirdIsOdd = thirdArray.every((value) => value % 2 !== 0);
+
+// console.log(eachElementInThirdIsEven);
+// console.log(eachElementInThirdIsOdd);
+
+console.log("============== Example 31 ==============");
+
+const isEveryUserActive = (users) =>
+  users.every((user) => user.isActive === true);
+
+console.log(isEveryUserActive(users));
+
+console.log("============== Example 32 ==============");
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change below this line
+
+const anyElementInFirstIsEven = firstArray;
+const anyElementInFirstIsOdd = firstArray;
+
+console.log(anyElementInFirstIsEven);
+console.log(anyElementInFirstIsOdd);
+
+const anyElementInSecondIsEven = secondArray;
+const anyElementInSecondIsOdd = secondArray;
+
+console.log(anyElementInSecondIsEven);
+console.log(anyElementInSecondIsOdd);
+
+const anyElementInThirdIsEven = thirdArray;
+const anyElementInThirdIsOdd = thirdArray;
+
+console.log(anyElementInThirdIsEven);
+console.log(anyElementInThirdIsOdd);
+
+
+console.log("============== Example 33 ==============");
+console.log("============== Example 34 ==============");
+console.log("============== Example 35 ==============");
 // console.log("============== Example 36 ==============");
 // console.log("============== Example 37 ==============");
 // console.log("============== Example 38 ==============");

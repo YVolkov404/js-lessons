@@ -154,12 +154,17 @@ console.log("============== Example ==============");
 console.table(players);
 
 const number = numbers.find((number) => number >= 5);
+
 console.log("number :>> ", number);
+
+console.log("============== Example ==============");
 
 const playerIdToFind = "player-2";
 
 const playerWithId = players.find((player) => player.id === playerIdToFind);
 console.log("playerWithId :>> ", playerWithId);
+
+console.log("============== Example ==============");
 
 const playerNameToFind = "polly";
 
@@ -210,13 +215,13 @@ const total = numbers.reduce((acc, number) => {
 
 console.log(total);
 
+console.log("============== Example ==============");
+
 const salary = {
   mango: 100,
   polly: 50,
   ajax: 150,
 };
-
-console.log("============== Example ==============");
 
 const totalSalary = Object.values(salary).reduce(
   (total, value) => total + value,

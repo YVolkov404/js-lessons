@@ -54,4 +54,3 @@ const players = [
 ];
 
 console.log(minBy(players, player => player.points));
-

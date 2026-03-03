@@ -424,17 +424,28 @@ console.log("============== Example ==============");
 
 console.table(tweets);
 
-const tags = tweets.flatMap((t) => t.tags);
+// const tags = tweets.flatMap((t) => t.tags);
 
-const tagsState = tags.reduce((acc, tag) => {
-  return {
-    ...acc,
-    [tag]: acc[tag] ? acc[tag] + 1 : 1,
-  };
-}, {});
+// const tagsState = tags.reduce((acc, tag) => {
+//   return {
+//     ...acc,
+//     [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//   };
+// }, {});
 
-console.table(tags);
-console.log(tagsState);
+// console.table(tags);
+// console.log(tagsState);
+
+// ? OR
+
+const tags = tweets
+  .flatMap((t) => t.tags)
+  .reduce((acc, tag) => {
+    return {
+      ...acc,
+      [tag]: acc[tag] ? acc[tag] + 1 : 1,
+    };
+  }, {});
 
 console.log("============== Example ==============");
 
@@ -467,17 +478,22 @@ const onlineAndSorted = players
   .filter((player) => player.online)
   .sort((playerA, playerB) => playerA.points - playerB.points);
 
-  console.table(onlineAndSorted)
+console.table(onlineAndSorted);
 
 console.log("============== Example ==============");
 
 const element = {
-  class: '',
+  class: "",
   hovered: false,
   changeClass(cls) {
     this.class = cls;
+    return this;
   },
   toggleHovered() {
     this.hovered = !this.hovered;
-  }
-}
+    return this;
+  },
+};
+
+element.toggleHovered().changeClass("open");
+console.log(element);

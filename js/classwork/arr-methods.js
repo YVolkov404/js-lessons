@@ -228,4 +228,35 @@ console.log("============== Example ==============");
 
 console.table(players);
 
+const totalTimePlayed = players.reduce(
+  (totalTime, player) => totalTime + player.timePlayed,
+  0,
+);
 
+console.log(totalTimePlayed);
+
+console.log("============== Example ==============");
+
+const cart = [
+  { label: "Apples", price: 100, quantity: 2 },
+  { label: "Bananas", price: 120, quantity: 3 },
+  { label: "Lemons", price: 70, quantity: 4 },
+];
+
+const totalAmount = cart.reduce(
+  (total, {price, quantity}) => total + price * quantity, 0
+);
+
+console.log(totalAmount);
+
+console.log("============== Example ==============");
+
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+console.table(tweets);

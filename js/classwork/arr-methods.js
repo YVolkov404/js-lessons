@@ -22,6 +22,8 @@ const doubledNumbers = numbers.map((number) => {
 
 console.log(doubledNumbers);
 
+console.log("============== Example ==============");
+
 const students = [
   { name: "mango", score: 83 },
   { name: "polly", score: 59 },
@@ -36,12 +38,9 @@ const students = [
 //? OR
 
 const studentsName = students.map((name) => name.score);
-
 console.log(studentsName);
 
 console.log("============== Example ==============");
-
-// ? map
 
 const players = [
   { id: "player-1", name: "mango", timePlayed: 310, points: 54, online: false },
@@ -51,16 +50,31 @@ const players = [
   { id: "player-5", name: "chelsy", timePlayed: 80, points: 48, online: true },
 ];
 
+console.table(players);
+
 const playerNames = players.map((player) => player.name);
 console.log("playerNames :>> ", playerNames);
 
+console.log("============== Example ==============");
+
+console.table(players);
+
 const playerIds = players.map((player) => player.id);
+
 console.log("playerIds :>> ", playerIds);
+
+console.log("============== Example ==============");
+
+console.table(players);
 
 const res = players.map(({ name, online }) => {
   (name, online);
 });
 console.log("res :>> ", res);
+
+console.log("============== Example ==============");
+
+console.table(players);
 
 const updatedPlayers = players.map((player) => {
   return {
@@ -69,7 +83,7 @@ const updatedPlayers = players.map((player) => {
   };
 });
 
-console.log("updatedPlayers :>> ", updatedPlayers);
+console.table("updatedPlayers :>> ", updatedPlayers);
 
 console.log("============== Example ==============");
 
@@ -124,7 +138,7 @@ console.log("============== Example ==============");
 
 // ? filter
 
-console.table(players);
+console.log(numbers);
 
 const filteredNumbers = numbers.filter((number) => {
   // console.log('number :>> ', number);
@@ -136,16 +150,24 @@ console.log(filteredNumbers);
 
 console.log("============== Example ==============");
 
-const onlinePlayers = players.filter((player) => player.online);
-console.log(onlinePlayers);
+console.table(players);
 
-const offlinePlayers = players.filter((player) => !player.online);
-console.log(offlinePlayers);
+const onlinePlayers = players.filter((player) => player.online);
+console.table(onlinePlayers);
 
 console.log("============== Example ==============");
 
+console.table(players);
+
+const offlinePlayers = players.filter((player) => !player.online);
+console.table(offlinePlayers);
+
+console.log("============== Example ==============");
+
+console.table(players);
+
 const hardcorePlayers = players.filter((player) => player.timePlayed > 250);
-console.log(hardcorePlayers);
+console.table(hardcorePlayers);
 
 console.log("============== Example ==============");
 
@@ -159,12 +181,16 @@ console.log("number :>> ", number);
 
 console.log("============== Example ==============");
 
+console.table(players);
+
 const playerIdToFind = "player-2";
 
 const playerWithId = players.find((player) => player.id === playerIdToFind);
 console.log("playerWithId :>> ", playerWithId);
 
 console.log("============== Example ==============");
+
+console.table(players);
 
 const playerNameToFind = "polly";
 
@@ -188,6 +214,10 @@ console.table(players);
 
 const isAnyOnline = players.some((player) => player.online);
 console.log("isAnyOnline :>> ", isAnyOnline);
+
+console.log("============== Example ==============");
+
+console.table(players);
 
 const anyHardcorePlayers = players.some((player) => player.timePlayed > 400);
 console.log("anyHardcorePlayers :>> ", anyHardcorePlayers);
@@ -294,10 +324,160 @@ const tagStats = allTags.reduce((acc, tag) => {
   // acc[tag] = 1;
   // return acc;
   // ? OR
-  ({
+  return {
     ...acc,
     [tag]: acc[tag] ? acc[tag] + 1 : 1,
-  });
+  };
 }, {});
 
 console.log(tagStats);
+
+console.log("============== Example ==============");
+
+console.table(numbers);
+
+numbers.sort();
+
+console.log("numbers :>> ", numbers);
+
+console.log("============== Example ==============");
+
+const letters = ["a", "H", "r", "l", "Y"];
+
+letters.sort();
+
+console.log("letters :>> ", letters);
+
+console.log("============== Example ==============");
+
+console.table(numbers);
+
+numbers.sort((curEl, nexEl) => {
+  return curEl - nexEl;
+});
+
+console.log("numbers :>> ", numbers);
+
+console.log("============== Example ==============");
+
+console.table(numbers);
+
+const deskSortedNumbers = [...numbers].sort((a, b) => b - a);
+const ascSortedNumbers = [...numbers].sort((a, b) => a - b);
+console.log("deskSortedNumbers :>> ", deskSortedNumbers);
+console.log("ascSortedNumbers :>> ", ascSortedNumbers);
+console.log(numbers);
+
+console.log("============== Example ==============");
+
+console.table(tweets);
+
+const sortedByBestPlayers = [...players].sort((prevPlayer, nextPlayer) => {
+  return nextPlayer.timePlayed - prevPlayer.timePlayed;
+});
+
+console.table(sortedByBestPlayers);
+
+console.log("============== Example ==============");
+
+console.table(tweets);
+
+const sortedByName = [...players].sort((a, b) => {
+  const result = a.name[0] > b.name[0];
+
+  // if (result) {
+  //   return 1;
+  // }
+
+  // if (!result) {
+  //   return -1;
+  // }
+
+  // ? OR
+
+  return result ? 1 : -1;
+});
+
+console.table(sortedByName);
+
+console.log("============== Example ==============");
+
+// ? flat
+
+const array = [1, 2, [4, [5]], 6, [7, 8, [9]]];
+
+console.table(array);
+
+console.log(array.flat(3));
+
+console.log("============== Example ==============");
+
+// console.table(tweets);
+
+// const tags = tweets.map((t) => t.tags).flat();
+
+// console.table(tags);
+
+console.log("============== Example ==============");
+
+// ? flatMap
+
+console.table(tweets);
+
+const tags = tweets.flatMap((t) => t.tags);
+
+const tagsState = tags.reduce((acc, tag) => {
+  return {
+    ...acc,
+    [tag]: acc[tag] ? acc[tag] + 1 : 1,
+  };
+}, {});
+
+console.table(tags);
+console.log(tagsState);
+
+console.log("============== Example ==============");
+
+// ? chaining
+
+console.log(numbers);
+
+// const greaterThenTwo = numbers.filter((num) => num > 2);
+
+// const multByThree = greaterThenTwo.map((num) => num * 3);
+
+// const sorted = multByThree.sort((a, b) => a - b);
+
+// ? OR
+
+const sorted = numbers
+  .filter((num) => num > 4) // greaterThenTwo
+  .map((num) => num * 3) // multByThree
+  .sort((a, b) => b - a); // sorted
+
+// console.log(greaterThenTwo);
+// console.log(multByThree);
+console.log(sorted);
+
+console.log("============== Example ==============");
+
+console.table(players);
+
+const onlineAndSorted = players
+  .filter((player) => player.online)
+  .sort((playerA, playerB) => playerA.points - playerB.points);
+
+  console.table(onlineAndSorted)
+
+console.log("============== Example ==============");
+
+const element = {
+  class: '',
+  hovered: false,
+  changeClass(cls) {
+    this.class = cls;
+  },
+  toggleHovered() {
+    this.hovered = !this.hovered;
+  }
+}

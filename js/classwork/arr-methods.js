@@ -244,7 +244,8 @@ const cart = [
 ];
 
 const totalAmount = cart.reduce(
-  (total, {price, quantity}) => total + price * quantity, 0
+  (total, { price, quantity }) => total + price * quantity,
+  0,
 );
 
 console.log(totalAmount);
@@ -260,3 +261,38 @@ const tweets = [
 ];
 
 console.table(tweets);
+
+const allTags = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);
+
+console.table(allTags);
+
+console.log("============== Example ==============");
+
+console.table(tweets);
+
+const tagStats = allTags.reduce((acc, tag) => {
+  // if (acc[tag]) {
+  // return {
+  //   ...acc,
+  //   [tag]: acc.tag + 1,
+  // };
+  // ? OR
+  // acc[tag] += 1;
+  // return acc;
+  // }
+
+  // return {
+  //   ...acc,
+  //   [tag]: 1,
+  // };
+  // ? OR
+  // acc[tag] = 1;
+  // return acc;
+  // ? OR
+  ({
+    ...acc,
+    [tag]: acc[tag] ? acc[tag] + 1 : 1,
+  });
+}, {});
+
+console.log(tagStats);

@@ -1,5 +1,6 @@
 console.log("--------------- Example 01 ---------------");
 // ? прототипное наследование
+
 const objC = {
   x: 1,
 };
@@ -20,12 +21,17 @@ console.log(objA.hasOwnProperty("x"));
 
 console.log("--------------- Example 02 ---------------");
 // ? класс
-const Car = function ({ config }) {
-  const { brand, model, price } = config;
+
+const Car = function ({ brand, model, price }) {
   this.brand = brand;
   this.model = model;
   this.price = price;
 };
+
+Car.prototype.changePrice = function (newPrice) {
+  this.price = newPrice;
+};
+console.log(Car.prototype);
 
 const myCar1 = new Car({
   brand: "Audi",
@@ -36,10 +42,33 @@ console.log(myCar1);
 
 const myCar2 = new Car({
   brand: "BMW",
-  model: "600",
+  model: "X6",
   price: 75000,
 });
 console.log(myCar2);
 
-const myCar3 = new Car({});
+const myCar3 = new Car({ price: 45000 });
 console.log(myCar3);
+
+myCar3.changePrice(95000); // находим в прототипе
+console.log(myCar3);
+
+console.log("--------------- Example 03 ---------------");
+
+const User = function ({ email, password }) {
+  this.email = email;
+  this.password = password;
+};
+
+User.prototype.changeEmail = function (newEmail) {
+    this.email = newEmail;
+}
+
+const mango = new User({
+  email: "mango@mail.ua",
+  password: "12345",
+});
+console.log(mango);
+
+mango.changeEmail('newmango@email.ua')
+console.log(mango);

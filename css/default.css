@@ -1,7 +1,6 @@
 .counter {
     width: 300px;
-    margin: auto;
-    margin-top: 100px;
+    margin: 50px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,6 +10,8 @@ button {
     margin: 0;
     padding: 0;
     font-size: 40px;
+    background-color:black;
+    color: azure;
 }
 p {
     margin: 0;

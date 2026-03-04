@@ -54,8 +54,9 @@ myCar3.changePrice(95000); // находим в прототипе
 console.log(myCar3);
 
 console.log("--------------- Example 03 ---------------");
+// ? класс
 
-const User = function ({ email, password }) {
+const User = function ({ name, email, password }) {
   this.email = email;
   this.password = password;
 };
@@ -72,3 +73,15 @@ console.log(mango);
 
 mango.changeEmail('newmango@email.ua')
 console.log(mango);
+
+console.log("--------------- Example 03 ---------------");
+// ? статические свойство и метод
+
+User.message = "Hello User" // отсутствует в екземпляре и в прототипе
+
+User.logInfo = function (name) {
+  console.log(name);
+}
+
+User.logInfo('Mango');
+console.dir(User);

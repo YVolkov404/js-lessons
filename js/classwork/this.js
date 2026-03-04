@@ -12,18 +12,18 @@ const fnA = function () {
 const fnB = fnA;
 console.log("fnA === fnB :>> ", fnA === fnB);
 
-console.log("============== Example ==============");
+console.log("--------------- Example 01 ---------------");
 
-// const user = {
-//   tag: 'Mango',
-//   showTag() {
-//     console.log('this :>> ', this);
-//   }
-// }
+const user1 = {
+  tag: "Mango",
+  showTag() {
+    console.log("this :>> ", this);
+  },
+};
 
-// user.showTag()
+user1.showTag();
 
-console.log("============== Example ==============");
+console.log("--------------- Example 02 ---------------");
 
 const foo = function () {
   console.log("this :>> ", this); // undefined
@@ -31,79 +31,78 @@ const foo = function () {
 
 foo();
 
-console.log("============== Example ==============");
+console.log("--------------- Example 03 ---------------");
 
-// const showTag = function () {
-//   console.log('this :>> ', this);
-// }
+const showTag = function () {
+  console.log("this :>> ", this);
+};
 
-// showTag()
+showTag();
 
-// const user = {
-//   tag: 'Mango'
-// }
+const user2 = {
+  tag: "Mango",
+};
 
-// user.showUserTag = showTag;
+user2.showUserTag = showTag;
+console.log(user2);
 
-// console.log(user);
+user2.showUserTag();
 
-// user.showUserTag();
+console.log("--------------- Example 04 ---------------");
 
-console.log("============== Example ==============");
-
-// const user = {
-//   tag: 'Mango',
-//   showTag() {
-//     console.log('this :>> ', this);
-//     console.log('this.tag :>> ', this.tag);
-//   }
-// }
-
-// user.showTag();
-
-// const outerShowTag = user.showTag;
-
-// outerShowTag();
-
-console.log("============== Example ==============");
-
-const user = {
-  tag: 'Mango',
+const user3 = {
+  tag: "Mango",
   showTag() {
-    console.log('this :>> ', this);
-    console.log('this.tag :>> ', this.tag);
-  }
-}
+    console.log("this :>> ", this);
+    // console.log('this.tag :>> ', this.tag);
+  },
+};
+
+user3.showTag();
+
+const outerShowTag = user3.showTag;
+
+outerShowTag();
+
+console.log("--------------- Example 05 ---------------");
+
+const user4 = {
+  tag: "Mango",
+  showTag() {
+    console.log("this :>> ", this);
+    // console.log("this.tag :>> ", this.tag);
+  },
+};
 
 const invokeAction = function (action) {
   console.log(action);
   action();
-}
+};
 
-invokeAction(user.showTag);
+invokeAction(user4.showTag);
 
-console.log("============== Example ==============");
+console.log("--------------- Example 06 ---------------");
 
 const makeChangeColor = function () {
   const changeColor = function (color) {
-    console.log('this :>> ', color);
-  }
+    console.log("this :>> ", color);
+  };
   // changeColor();
 
   const sweater = {
-    color: 'teal',
-  }
+    color: "teal",
+  };
 
   sweater.updateColor = changeColor;
 
   return sweater.updateColor;
-}
+};
 
 const swapColor = makeChangeColor();
 
-swapColor('blue')
+swapColor("blue");
 
-console.log("============== Example ==============");
+console.log("--------------- Example 07 ---------------");
 
 const changeColor = function (color) {
   console.log("this :>> ", color);
@@ -115,11 +114,11 @@ const hat = {
 };
 
 const changeHatColor = changeColor.bind(hat);
-changeHatColor("green");
 
+changeHatColor("green");
 console.log(hat);
 
-console.log("============== Example ==============");
+console.log("--------------- Example 08 ---------------");
 
 const counter = {
   value: 0,

@@ -125,21 +125,21 @@ hat.updateColor('orange')
 
 console.log("============== Example ==============");
 
-const counter = {
-  value: 0,
-  increment (value) {
-    this.value += value;
-  },
-  decrement (value) {
-    this.value -= value;
-  }
-}
+// const counter = {
+//   value: 0,
+//   increment (value) {
+//     this.value += value;
+//   },
+//   decrement (value) {
+//     this.value -= value;
+//   }
+// }
 
-const updateCounter = function (value, callback) {
-  callback(value);
-}
+// const updateCounter = function (value, callback) {
+//   callback(value);
+// }
 
-updateCounter(10, counter.increment);
-updateCounter(5, counter.decrement)
+// updateCounter(10, counter.increment);
+// updateCounter(5, counter.decrement)
 
 

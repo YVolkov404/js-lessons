@@ -643,20 +643,20 @@ const secondArray = [17, 61, 23];
 const thirdArray = [17, 26, 94, 61, 36, 23, 18];
 // Change below this line
 
-const anyElementInFirstIsEven = firstArray;
-const anyElementInFirstIsOdd = firstArray;
+const anyElementInFirstIsEven = firstArray.some(value => value % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some(value => value % 2 !== 0);
 
 console.log(anyElementInFirstIsEven);
 console.log(anyElementInFirstIsOdd);
 
-const anyElementInSecondIsEven = secondArray;
-const anyElementInSecondIsOdd = secondArray;
+const anyElementInSecondIsEven = secondArray.some(value => value % 2 === 0);
+const anyElementInSecondIsOdd = secondArray.some(value => value % 2 !== 0);
 
 console.log(anyElementInSecondIsEven);
 console.log(anyElementInSecondIsOdd);
 
-const anyElementInThirdIsEven = thirdArray;
-const anyElementInThirdIsOdd = thirdArray;
+const anyElementInThirdIsEven = thirdArray.some(value => value % 2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some(value => value % 2 !== 0);
 
 console.log(anyElementInThirdIsEven);
 console.log(anyElementInThirdIsOdd);

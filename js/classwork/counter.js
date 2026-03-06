@@ -6,8 +6,22 @@ const CounterPlugin = function ({
   this._value = initialValue;
   this._step = step;
   this._refs = this._getRefs(rootSelector);
-  this._bindEvents();
-  this.updateValueUi();
+
+  if (this._isReady()) {
+    this._bindEvents();
+    this.updateValueUi();
+  } else {
+    console.warn(`CounterPlugin: markup not found for selector "${rootSelector}"`);
+  }
+};
+
+CounterPlugin.prototype._isReady = function () {
+  return Boolean(
+    this._refs.container &&
+      this._refs.incrementBtn &&
+      this._refs.decrementBtn &&
+      this._refs.value
+  );
 };
 
 CounterPlugin.prototype._getRefs = function (rootSelector) {
@@ -15,9 +29,11 @@ CounterPlugin.prototype._getRefs = function (rootSelector) {
 
   if (typeof document !== "undefined") {
     refs.container = document.querySelector(rootSelector);
-    refs.incrementBtn = refs.container.querySelector("[data-increment]");
-    refs.decrementBtn = refs.container.querySelector("[data-decrement]");
-    refs.value = refs.container.querySelector("[data-value]");
+    if (refs.container) {
+      refs.incrementBtn = refs.container.querySelector("[data-increment]");
+      refs.decrementBtn = refs.container.querySelector("[data-decrement]");
+      refs.value = refs.container.querySelector("[data-value]");
+    }
   }
 
   return refs;
@@ -26,18 +42,18 @@ CounterPlugin.prototype._getRefs = function (rootSelector) {
 CounterPlugin.prototype._bindEvents = function () {
   this._refs.incrementBtn.addEventListener("click", () => {
     this.increment();
-    this.updateValueUi()
+    this.updateValueUi();
   });
 
   this._refs.decrementBtn.addEventListener("click", () => {
     this.decrement();
-    this.updateValueUi()
+    this.updateValueUi();
   });
 };
 
 CounterPlugin.prototype.updateValueUi = function () {
   this._refs.value.textContent = this._value;
-}
+};
 
 CounterPlugin.prototype.increment = function () {
   this._value += this._step;
@@ -48,6 +64,5 @@ CounterPlugin.prototype.decrement = function () {
 };
 
 const counter1 = new CounterPlugin({ rootSelector: "#counter-1", step: 10 });
+
 const counter2 = new CounterPlugin({ rootSelector: "#counter-2", step: 2 });
-
-

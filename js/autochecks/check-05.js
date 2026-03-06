@@ -643,38 +643,221 @@ const secondArray = [17, 61, 23];
 const thirdArray = [17, 26, 94, 61, 36, 23, 18];
 // Change below this line
 
-const anyElementInFirstIsEven = firstArray.some(value => value % 2 === 0);
-const anyElementInFirstIsOdd = firstArray.some(value => value % 2 !== 0);
+const anyElementInFirstIsEven = firstArray.some((value) => value % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some((value) => value % 2 !== 0);
 
 console.log(anyElementInFirstIsEven);
 console.log(anyElementInFirstIsOdd);
 
-const anyElementInSecondIsEven = secondArray.some(value => value % 2 === 0);
-const anyElementInSecondIsOdd = secondArray.some(value => value % 2 !== 0);
+const anyElementInSecondIsEven = secondArray.some((value) => value % 2 === 0);
+const anyElementInSecondIsOdd = secondArray.some((value) => value % 2 !== 0);
 
 console.log(anyElementInSecondIsEven);
 console.log(anyElementInSecondIsOdd);
 
-const anyElementInThirdIsEven = thirdArray.some(value => value % 2 === 0);
-const anyElementInThirdIsOdd = thirdArray.some(value => value % 2 !== 0);
+const anyElementInThirdIsEven = thirdArray.some((value) => value % 2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some((value) => value % 2 !== 0);
 
 console.log(anyElementInThirdIsEven);
 console.log(anyElementInThirdIsOdd);
 
-
 console.log("============== Example 33 ==============");
+
+const isAnyUserActive = (users) => users.some((user) => user.isActive);
+console.log(isAnyUserActive(users));
+
 console.log("============== Example 34 ==============");
+
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244,
+};
+const playtimes = Object.values(players);
+
+const totalPlayTime = playtimes.reduce((acc, playtime) => {
+  return acc + playtime;
+});
+
+const averagePlayTime = totalPlayTime / playtimes.length;
+
+console.log(averagePlayTime);
+
 console.log("============== Example 35 ==============");
-// console.log("============== Example 36 ==============");
-// console.log("============== Example 37 ==============");
-// console.log("============== Example 38 ==============");
-// console.log("============== Example 39 ==============");
-// console.log("============== Example 40 ==============");
-// console.log("============== Example 41 ==============");
-// console.log("============== Example 42 ==============");
-// console.log("============== Example 43 ==============");
-// console.log("============== Example 44 ==============");
-// console.log("============== Example 45 ==============");
-// console.log("============== Example 46 ==============");
-// console.log("============== Example 47 ==============");
-// console.log("============== Example 48 ==============");
+
+
+const playersArr = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+
+const totalAveragePlaytimePerGame = playersArr.reduce(
+  (acc, { playtime, gamesPlayed }) => {
+    return acc + playtime / gamesPlayed;
+  },
+  0,
+);
+
+console.log(totalAveragePlaytimePerGame);
+
+console.log("============== Example 36 ==============");
+
+const calculateTotalBalance = (users) => {
+  return users
+    .map((user) => user.balance)
+    .reduce((acc, balance) => {
+      return acc + balance;
+    });
+};
+
+console.log(calculateTotalBalance(users));
+
+console.log("============== Example 37 ==============");
+
+const getTotalFriendCount = (users) => {
+  return users
+    .flatMap((user) => user.friends.length)
+    .reduce((acc, friend) => {
+      return (acc += friend);
+    });
+};
+
+console.log(getTotalFriendCount(users));
+
+console.log("============== Example 38 ==============");
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+];
+
+const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+console.log(ascendingReleaseDates);
+
+const alphabeticalAuthors = [...authors].sort((a, b) => {
+  return a.localeCompare(b);
+});
+console.log(alphabeticalAuthors);
+
+console.log("============== Example 39 ==============");
+
+const ascendingReleaseDatesNew = [...releaseDates].sort((a, b) => a - b);
+
+const descendingReleaseDates = [...releaseDates].sort((a, b) => b - a);
+
+console.log(ascendingReleaseDatesNew);
+console.log(descendingReleaseDates);
+
+console.log("============== Example 40 ==============");
+
+const authorsArr = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+  "Howard Lovecraft",
+];
+// Change code below this line
+
+const authorsInAlphabetOrder = [...authorsArr].sort((a, b) =>
+  a.localeCompare(b),
+);
+console.log(authorsInAlphabetOrder);
+
+const authorsInReversedOrder = [...authorsArr].sort((a, b) =>
+  b.localeCompare(a),
+);
+console.log(authorsInReversedOrder);
+
+console.log("============== Example 41 ==============");
+
+const sortedByAuthorName = books
+  .map((author) => author.author)
+  .filter((author, index, array) => array.indexOf(author) === index)
+  .sort((a, b) => a.localeCompare(b));
+console.log(sortedByAuthorName);
+
+const sortedByReversedAuthorName = books
+  .map((author) => author.author)
+  .filter((author, index, array) => array.indexOf(author) === index)
+  .sort((a, b) => b.localeCompare(a));
+console.log(sortedByReversedAuthorName);
+
+const sortedByAscendingRating = books
+  .map((rating) => rating.rating)
+  .sort((a, b) => a - b);
+console.log(sortedByAscendingRating);
+
+const sortedByDescentingRating = books
+  .map((rating) => rating.rating)
+  .sort((a, b) => b - a);
+console.log(sortedByDescentingRating);
+
+console.log("============== Example 42 ==============");
+
+const sortByAscendingBalance = (users) => {
+  return [...users].sort((a, b) => a.balance - b.balance);
+};
+console.log(sortByAscendingBalance(users));
+
+console.log("============== Example 43 ==============");
+
+const sortByDescendingFriendCount = (users) => {
+  return [...users].sort((a, b) => b.friends.length - a.friends.length);
+};
+
+console.log(sortByDescendingFriendCount(users));
+
+console.log("============== Example 44 ==============");
+
+const sortByName = (users) =>
+  [...users].sort((a, b) => a.name.localeCompare(b.name));
+console.log(sortByName(users));
+
+console.log("============== Example 45 ==============");
+
+const MIN_BOOK_RATING = 8;
+
+const names = books
+  .filter((user) => user.rating > MIN_BOOK_RATING)
+  .map((user) => user.author)
+  .sort((a, b) => a.localeCompare(b));
+console.log(names);
+
+console.log("============== Example 46 ==============");
+
+const getNamesSortedByFriendCount = (users) => {
+  return [...users]
+    .sort((a, b) => a.friends.length - b.friends.length)
+    .map((user) => user.name);
+};
+
+console.log(getNamesSortedByFriendCount(users));
+
+console.log("============== Example 47 ==============");
+
+const getSortedFriends = (users) => {
+  return users
+    .flatMap(user => user.friends)
+    .filter((friends, index, array) => array.indexOf(friends) === index)
+    .sort((a, b) => a.localeCompare(b))
+};
+
+console.log(getSortedFriends(users));
+
+console.log("============== Example 48 ==============");
+
+const getTotalBalanceByGender = (users, gender) =>
+  users
+    .filter((user) => user.gender === gender)
+    .map((user) => user.balance)
+    .reduce((acc, balance) => acc + balance, 0);
+
+console.log(getTotalBalanceByGender(users, "male"));
+console.log(getTotalBalanceByGender(users, "female"));

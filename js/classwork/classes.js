@@ -59,7 +59,7 @@ const carInstance = new Car({
   model: "Q3",
   price: 35000,
 });
-console.log(Object.getPrototypeOf(carInstance) === Car.prototype);
+// console.log(Object.getPrototypeOf(carInstance) === Car.prototype);
 
 Car.logInfo(carInstance);
 
@@ -76,7 +76,7 @@ console.log("--------------- Example 03 ---------------");
 // ? Наследование
 
 class Hero {
-  constructor (name = 'hero', xp = 0) {
+  constructor ({name = 'hero', xp = 0} = {}) {
     this.name = name;
     this.xp = xp;
   }
@@ -86,23 +86,42 @@ class Hero {
 }
 
 class Warrior extends Hero {
-  constructor (weapon = 'sword') {
-    super();
+  constructor ({weapon, ...rest} = {}) {
+    super(rest);
     this.weapon = weapon;
+  }
+  attack () {
+    console.log(`Attack using ${this.weapon}`);
   }
 }
 
-const mango = new Warrior('Mango', 1000, 'sword')
-console.log(mango);
+class Mage extends Hero {
+  constructor ({spells, ...rest} = {}) {
+    super(rest);
+    this.spells = spells;
+  }
+  cast () {
+    console.log(`Attack using ${this.spells}`);
+  }
+}
 
+const mango = new Warrior({name: 'Mango', xp: 1000, weapon: 'sword'})
+
+console.log(mango);
 mango.gainXp(1000)
-
 console.log(mango);
 
-console.log(mango.__proto__ === Warrior.prototype);
+const polly = new Mage({name: 'Polly', xp: 2000, spells: ['fireball', 'lightning']});
 
-console.log(Warrior.prototype.__proto__);
+console.log(polly);
+polly.gainXp(500);
+console.log(polly);
 
+// console.log(Object.getPrototypeOf(mango) === Warrior.prototype);
+// console.log(Warrior.prototype.__proto__);
+
+// console.log('Hero.prototype :>> ', Hero.prototype);
+// console.log('Warrior.prototype :>> ', Warrior.prototype);
 
 
 

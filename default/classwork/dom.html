@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/dom.css">
+    <title>classwork</title>
+</head>
+
+<body>
+    <a href="../../default/">main page</a>
+
+    <div class="wrap">
+        <div class="wrapper">
+            <button type="button" class="magic-btn js-magic-btn">Magic Button</button>
+            <ul class="site-nav">
+                <li class="site-nav-item"><a href="./about" class="site-nav-link">About us</a></li>
+                <li class="site-nav-item"><a href="./portfolio" class="site-nav-link">Portfolio</a></li>
+                <li class="site-nav-item"><a href="./contacts" class="site-nav-link">Contacts</a></li>
+            </ul>
+        </div>
+
+        <section class="hero">
+            <h1 class="hero-title">About cats</h1>
+            <img class="hero-img"
+                src="https://headsupfortails.com/cdn/shop/articles/Welcoming_a_Cat_to_a_New_Home_x630.jpg?v=1741258295"
+                alt="cat" width="300">
+        </section>
+
+        <input type="text" class="js-input">
+
+        <div class="wrapper actions js-actions">
+            <button type="button" data-action="add">Add</button>
+            <button type="button" data-action="remove">Remove</button>
+            <button type="button" data-action="edit">Edit</button>
+        </div>
+
+        <div class="color-picker js-color-picker"></div>
+
+        <div class="products js-products"></div>
+
+        <h2 class="title-el">This is <span>Title</span></h2>
+
+    </div>
+    <table class="transaction-table js-transaction-table">
+        <thead>
+            <tr>
+                <th>ID транзакции</th>
+                <th>Сумма</th>
+                <th>Дата</th>
+                <th>Кто</th>
+                <th>Тип транзации</th>
+                <th>Имя счёта</th>
+                <th>Номер счёта</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script type="module" src="../../js/classwork/dom.js"> </script>
+</body>
+
+</html>

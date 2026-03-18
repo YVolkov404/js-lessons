@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "lodash": "^4.17.23"
+    "@csstools/css-calc": "^1.2.4",
+    "jsdom": "^27.0.1",
+    "lodash": "^4.17.23",
+    "quokka": "^0.0.7"
   },
   "name": "js-lessons",
   "version": "1.0.0",

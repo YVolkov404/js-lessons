@@ -271,7 +271,7 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
         message = 'Insufficient funds!';
     } else {
       const droidsLeft = customerCredits - totalPrice
-            message = `You ordered ${orderedQuantity} droids, you have ${droidsLeft} credits left`;
+        message = `You ordered ${orderedQuantity} droids, you have ${droidsLeft} credits left`;
     }
 
   return message;
@@ -335,10 +335,10 @@ function isNumberInRange(start, end, number) {
   return isInRange;
 }
 
-isNumberInRange(10, 30, 17);
-isNumberInRange(10, 30, 5);
-isNumberInRange(20, 50, 24);
-isNumberInRange(20, 50, 76);        
+console.log(isNumberInRange(10, 30, 17));
+console.log(isNumberInRange(10, 30, 5));
+console.log(isNumberInRange(20, 50, 24));
+console.log(isNumberInRange(20, 50, 76));
 
 //------------------------------
 

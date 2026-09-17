@@ -53,9 +53,9 @@ console.log("--------------- Example 04 ---------------");
  * Метод числа toFixed(digits) - округлення чисел;
  */
 
-let salary = 1300.16472;
-salary = Number(salary.toFixed(2));
-console.log("Salary:", salary);
+// let salary = 1300.16472;
+// salary = Number(salary.toFixed(2));
+// console.log("Salary:", salary);
 
 console.log("--------------- Example 05 ---------------");
 
@@ -255,3 +255,108 @@ console.log("--------------- Example 15 ---------------");
 //   console.log("You can access basic features.");
 // }
 
+console.log("--------------- Example 16 ---------------");
+
+let balance = 10000;
+const payment = Math.round(Math.random() * 20000);
+
+console.log(
+  `Здійснюємо платіж у розмірі ${payment} кредитів. Перевіряємо доступність коштів на рахунку...`,
+);
+
+if (payment <= balance) {
+  balance -= payment;
+  console.log(
+    `На рахунку залишилось ${balance} кредитів. Операція пройшла успішно!`,
+  );
+} else {
+  console.log("На рахунку недостатньо коштів для проведення операції!");
+}
+
+console.log("--------------- Example 17 ---------------");
+
+// let password;
+
+// do {
+//   password = prompt('Enter the password')
+// } while (password.length < 5);
+
+// console.log(Number(password));
+
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let sum = 0
+
+for (let index = 0; index < array.length + 1; index++) {
+  if (index % 2 === 0) {
+    sum += index;
+  }
+}
+
+console.log(sum);
+
+console.log("--------------- Example 18 ---------------");
+
+let stars = Math.round(Math.random() * (5 - 1) + 1);
+let price;
+
+switch (stars) {
+  case 1:
+    price = "20$";
+    break;
+  case 2:
+    price = "30$";
+    break;
+  case 3:
+    price = "40$";
+    break;
+  case 4:
+    price = "50$";
+    break;
+  case 5:
+    price = "60$";
+    break;
+  default:
+    break;
+}
+
+console.log(price);
+
+switch (stars) {
+  case 1:
+  case 2:
+    price = "20$";
+    break;
+  case 3:
+  case 4:
+    price = "30$";
+    break;
+  case 5:
+    price = "40$";
+    break;
+  default:
+    break;
+}
+
+console.log(price);
+
+console.log("--------------- Example 19 ---------------");
+
+for (let index = 10; index >= 0; index -= 1) {
+  const element = index;
+  console.log(element);
+}
+
+console.log("--------------- Example 20 ---------------");
+
+const emploees = 10;
+const minSalary = 500;
+const maxSalary = 5000;
+let totalSalary = 0;
+
+for (let i = 1; i <= emploees; i += 1) {
+  let salary = Math.round(Math.random() * (maxSalary - minSalary) + minSalary);
+
+  totalSalary += salary;
+}
+
+console.log(totalSalary);

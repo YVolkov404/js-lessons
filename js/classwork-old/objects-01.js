@@ -51,7 +51,7 @@ console.log(playlist);
 // changing property value
 playlist.changeName("My playlist");
 playlist.updateRating(5);
-//adding property value
+// adding property value
 playlist.addTrack("track-4");
 
 console.log(playlist);

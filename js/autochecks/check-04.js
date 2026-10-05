@@ -163,10 +163,12 @@ console.log("============== Example 09 ==============");
 
 const emailInputName = "email";
 const passwordInputName = "password";
+const numberValue = 555;
 
 const credentials = {
   [emailInputName]: "henry.carter@aptmail.com",
   [passwordInputName]: "jqueryismyjam",
+  [numberValue]: 555,
 };
 
 console.log(credentials);

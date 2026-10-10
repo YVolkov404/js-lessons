@@ -1,10 +1,4 @@
 {
-  "dependencies": {
-    "@csstools/css-calc": "^1.2.4",
-    "jsdom": "^27.0.1",
-    "lodash": "^4.17.23",
-    "quokka": "^0.0.7"
-  },
   "name": "js-lessons",
   "version": "1.0.0",
   "description": "",
@@ -23,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/YVolkov404/js-lessons/issues"
   },
-  "homepage": "https://github.com/YVolkov404/js-lessons#readme"
+  "homepage": "https://github.com/YVolkov404/js-lessons#readme",
+  "dependencies": {
+    "@csstools/css-calc": "^1.2.4",
+    "jsdom": "^27.0.1",
+    "lodash": "^4.18.1"
+  }
 }

@@ -31,7 +31,7 @@ const players = [
   { id: "player-2", name: "polly", timePlayed: 470, points: 92, online: true },
   { id: "player-3", name: "kiwi", timePlayed: 230, points: 48, online: true },
   { id: "player-4", name: "ajax", timePlayed: 150, points: 71, online: false },
-  { id: "player-5", name: "chelsy", timePlayed: 80, points: 48, online: true },
+  { id: "player-5", name: "chelsy", timePlayed: 80, points: 41, online: true },
 ];
 
 // ? example 2
@@ -198,3 +198,137 @@ const tagsStats = allTags.reduce(
   {},
 );
 console.log(tagsStats);
+
+console.log("--------------- Example 06 ---------------");
+
+// ! method sort
+
+// ? example 1
+numbers.sort();
+console.log(numbers);
+
+// ? example 2
+const letters = ["f", "U", "C", "k", "y", "E", "a", "H"];
+
+letters.sort();
+console.log(letters);
+
+// ? example 3
+numbers.sort((currentEl, nextEl) => nextEl - currentEl);
+console.log(numbers);
+
+// ? example 4
+const copyOfNumbers = [...numbers];
+
+copyOfNumbers.sort();
+console.log(numbers);
+console.log(copyOfNumbers);
+
+// ? example 5
+const descSortedNumbers = [...numbers].sort((a, b) => b - a);
+console.log(descSortedNumbers);
+
+const ascSortedNumbers = [...numbers].sort((a, b) => a - b);
+console.log(ascSortedNumbers);
+
+// ? example 6
+const sortedbyBestPlayers = [...players].sort(
+  (prevPlayer, nextPlayer) => nextPlayer.timePlayed - prevPlayer.timePlayed,
+);
+console.table(sortedbyBestPlayers);
+
+// ? example 7
+const sortedByWorstPlayers = [...players].sort(
+  (prevPlayer, nextPlayer) => prevPlayer.points - nextPlayer.points,
+);
+console.table(sortedByWorstPlayers);
+
+// ? example 8
+const sortedPlayersByName = [...players].sort((prevPlayer, nextPlayer) => {
+  const result = prevPlayer.name[0] > nextPlayer.name[0];
+  if (result) {
+    return 1;
+  } else {
+    return -1;
+  }
+});
+console.table(sortedPlayersByName);
+
+console.log("--------------- Example 07 ---------------");
+
+// ! method flat
+
+const array = [1, 2, 3, [4, [5]], 6, 7, [8, 9, [10]]];
+console.log(array.flat(2)); // 2 - depth of flat
+
+console.log("--------------- Example 08 ---------------");
+
+// ! method flatMap
+
+// const tags = tweets.map(tag => tag.tags).flat();
+// console.log(tags);
+
+// * OR
+
+const tags = tweets.flatMap((tag) => tag.tags);
+console.log(tags);
+
+console.log("--------------- Example 08 ---------------");
+
+// ! chaining
+
+// example 01
+const greaterThenTwo = numbers.filter((number) => number > 34);
+console.log(greaterThenTwo);
+
+const multByThree = greaterThenTwo.map((number) => number * 3);
+console.log(multByThree);
+
+const sortedNumbers = multByThree.sort((a, b) => a - b);
+console.log(sortedNumbers);
+
+const sorted = numbers
+  .filter((number) => number > 34)
+  .map((number) => number * 3)
+  .sort((a, b) => a - b);
+console.log(sorted);
+
+// example 02
+const userOnlineAndSorted = players
+  .filter((user) => user.online)
+  .sort((prevPoint, nextPoint) => prevPoint.points - nextPoint.points);
+console.table(userOnlineAndSorted);
+
+console.log("--------------- Example 09 ---------------");
+
+// ! chaining in methods of object like in jquery
+
+const element = {
+  class: "",
+  hovered: false,
+  changeClass(cls) {
+    this.class = cls;
+  },
+  toggleHovered() {
+    this.hovered = !this.hovered;
+    return this;
+  },
+};
+
+element.toggleHovered().changeClass("open");
+console.log(element);
+
+console.log("--------------- Example 09 ---------------");
+
+// ! flat + reduce
+
+const stats = tweets
+  .flatMap((tag) => tag.tags)
+  .reduce(
+    (acc, tag) => ({
+      ...acc,
+      [tag]: acc[tag] ? acc[tag] + 1 : 1,
+    }),
+    {},
+  );
+console.log(stats);

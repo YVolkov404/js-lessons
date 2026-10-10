@@ -1,4 +1,4 @@
-const _ = require("lodash");
+import _ from "https://cdn.jsdelivr.net/npm/lodash-es/+esm";
 
 console.log(_.isEmpty({}));
 console.log(_.isEmpty({ a: 1 }));

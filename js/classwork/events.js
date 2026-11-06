@@ -157,7 +157,7 @@ function onMouseMove(event) {
   console.log(event);
 }
 
-console.log("----------------- Example-06 -----------------");
+console.log("----------------- Example-07 -----------------");
 
 const ref = {
   openModalBtn: document.querySelector("[data-action='open-modal']"),
